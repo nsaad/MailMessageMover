@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9363DBB817B1262C009BDBEE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9363DBB717B1262C009BDBEE /* Cocoa.framework */; };
+		9363DBBA17B1262C009BDBEE /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9363DBB917B1262C009BDBEE /* AppleScriptObjC.framework */; };
+		9363DBC417B1262C009BDBEE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9363DBC217B1262C009BDBEE /* InfoPlist.strings */; };
+		9363DBC617B1262C009BDBEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9363DBC517B1262C009BDBEE /* main.m */; };
+		9363DBCA17B1262C009BDBEE /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9363DBC817B1262C009BDBEE /* Credits.rtf */; };
+		9363DBCC17B1262C009BDBEE /* XYZAppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 9363DBCB17B1262C009BDBEE /* XYZAppDelegate.applescript */; };
+		9363DBCF17B1262C009BDBEE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9363DBCD17B1262C009BDBEE /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9363DBB417B1262C009BDBEE /* MailMessageMover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailMessageMover.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9363DBB717B1262C009BDBEE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9363DBB917B1262C009BDBEE /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
+		9363DBBC17B1262C009BDBEE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9363DBBD17B1262C009BDBEE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9363DBBE17B1262C009BDBEE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9363DBC117B1262C009BDBEE /* MailMessageMover-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MailMessageMover-Info.plist"; sourceTree = "<group>"; };
+		9363DBC317B1262C009BDBEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9363DBC517B1262C009BDBEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9363DBC717B1262C009BDBEE /* MailMessageMover-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MailMessageMover-Prefix.pch"; sourceTree = "<group>"; };
+		9363DBC917B1262C009BDBEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		9363DBCB17B1262C009BDBEE /* XYZAppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = XYZAppDelegate.applescript; sourceTree = "<group>"; };
+		9363DBCE17B1262C009BDBEE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9363DBB117B1262C009BDBEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9363DBB817B1262C009BDBEE /* Cocoa.framework in Frameworks */,
+				9363DBBA17B1262C009BDBEE /* AppleScriptObjC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9363DBAB17B1262C009BDBEE = {
+			isa = PBXGroup;
+			children = (
+				9363DBBF17B1262C009BDBEE /* MailMessageMover */,
+				9363DBB617B1262C009BDBEE /* Frameworks */,
+				9363DBB517B1262C009BDBEE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9363DBB517B1262C009BDBEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9363DBB417B1262C009BDBEE /* MailMessageMover.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9363DBB617B1262C009BDBEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9363DBB717B1262C009BDBEE /* Cocoa.framework */,
+				9363DBB917B1262C009BDBEE /* AppleScriptObjC.framework */,
+				9363DBBB17B1262C009BDBEE /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9363DBBB17B1262C009BDBEE /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9363DBBC17B1262C009BDBEE /* AppKit.framework */,
+				9363DBBD17B1262C009BDBEE /* CoreData.framework */,
+				9363DBBE17B1262C009BDBEE /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		9363DBBF17B1262C009BDBEE /* MailMessageMover */ = {
+			isa = PBXGroup;
+			children = (
+				9363DBCB17B1262C009BDBEE /* XYZAppDelegate.applescript */,
+				9363DBCD17B1262C009BDBEE /* MainMenu.xib */,
+				9363DBC017B1262C009BDBEE /* Supporting Files */,
+			);
+			path = MailMessageMover;
+			sourceTree = "<group>";
+		};
+		9363DBC017B1262C009BDBEE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9363DBC117B1262C009BDBEE /* MailMessageMover-Info.plist */,
+				9363DBC217B1262C009BDBEE /* InfoPlist.strings */,
+				9363DBC517B1262C009BDBEE /* main.m */,
+				9363DBC717B1262C009BDBEE /* MailMessageMover-Prefix.pch */,
+				9363DBC817B1262C009BDBEE /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9363DBB317B1262C009BDBEE /* MailMessageMover */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9363DBD217B1262C009BDBEE /* Build configuration list for PBXNativeTarget "MailMessageMover" */;
+			buildPhases = (
+				9363DBB017B1262C009BDBEE /* Sources */,
+				9363DBB117B1262C009BDBEE /* Frameworks */,
+				9363DBB217B1262C009BDBEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MailMessageMover;
+			productName = MailMessageMover;
+			productReference = 9363DBB417B1262C009BDBEE /* MailMessageMover.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9363DBAC17B1262C009BDBEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = XYZ;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Nabeel Saad";
+			};
+			buildConfigurationList = 9363DBAF17B1262C009BDBEE /* Build configuration list for PBXProject "MailMessageMover" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9363DBAB17B1262C009BDBEE;
+			productRefGroup = 9363DBB517B1262C009BDBEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9363DBB317B1262C009BDBEE /* MailMessageMover */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9363DBB217B1262C009BDBEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9363DBC417B1262C009BDBEE /* InfoPlist.strings in Resources */,
+				9363DBCA17B1262C009BDBEE /* Credits.rtf in Resources */,
+				9363DBCF17B1262C009BDBEE /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9363DBB017B1262C009BDBEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9363DBC617B1262C009BDBEE /* main.m in Sources */,
+				9363DBCC17B1262C009BDBEE /* XYZAppDelegate.applescript in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9363DBC217B1262C009BDBEE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9363DBC317B1262C009BDBEE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9363DBC817B1262C009BDBEE /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9363DBC917B1262C009BDBEE /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		9363DBCD17B1262C009BDBEE /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9363DBCE17B1262C009BDBEE /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9363DBD017B1262C009BDBEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9363DBD117B1262C009BDBEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9363DBD317B1262C009BDBEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MailMessageMover/MailMessageMover-Prefix.pch";
+				INFOPLIST_FILE = "MailMessageMover/MailMessageMover-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9363DBD417B1262C009BDBEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MailMessageMover/MailMessageMover-Prefix.pch";
+				INFOPLIST_FILE = "MailMessageMover/MailMessageMover-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9363DBAF17B1262C009BDBEE /* Build configuration list for PBXProject "MailMessageMover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9363DBD017B1262C009BDBEE /* Debug */,
+				9363DBD117B1262C009BDBEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9363DBD217B1262C009BDBEE /* Build configuration list for PBXNativeTarget "MailMessageMover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9363DBD317B1262C009BDBEE /* Debug */,
+				9363DBD417B1262C009BDBEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9363DBAC17B1262C009BDBEE /* Project object */;
+}
