@@ -18,7 +18,7 @@ tell application "Mail" to try
 	end if
 	
 	set workingInMessage to ("Working in [" & currFolderName & "] of account [" & currAccount & "]
-With the message [" & messageSubject & "]")
+Message [" & messageSubject & "]")
 	
 	return workingInMessage
 end try
