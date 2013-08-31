@@ -15,8 +15,10 @@
 
 @property (nonatomic, strong) IBOutlet NSTextField * testLabel;
 @property (nonatomic, strong) IBOutlet NSTextField * userInput;
+@property (nonatomic, strong) IBOutlet NSTextField * lbStatus;
 
 - (IBAction) controlTextDidChange :(id) sender;
 - (IBAction) controlTextDidBeginEditing:(NSNotification *)obj :(id)sender;
+- (void) awakeFromNib;
 
 @end

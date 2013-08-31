@@ -8,11 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Mailbox : NSObject
+@interface Mailbox : NSObject <NSCopying>
 
 @property (copy) NSString *name;
 @property (readonly, copy) NSMutableArray *children;
+@property Boolean visible;
+@property (assign) Mailbox *parent;
+@property (assign) Mailbox *account;
+
+@property (copy) NSString * accountString;
+@property (copy) NSString * parentString;
+@property Boolean duplicateName;
 
 - (id) initWithName : (NSString *) name;
 - (void) addChild : (Mailbox *) child;
+- (void) setParent : (Mailbox *) parent;
 @end

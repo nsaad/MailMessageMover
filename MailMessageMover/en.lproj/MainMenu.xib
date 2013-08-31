@@ -1465,7 +1465,6 @@
 							<string key="NSFrame">{{295, 87}, {82, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="139315531">
@@ -1540,7 +1539,7 @@
 											<string key="NSFrameSize">{372, 171}</string>
 											<reference key="NSSuperview" ref="645076750"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="227944089"/>
+											<reference key="NSNextKeyView" ref="74389887"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -1689,7 +1688,7 @@
 							<string key="NSFrame">{{35, 286}, {374, 189}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="74389887"/>
+							<reference key="NSNextKeyView" ref="645076750"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">133650</int>
 							<reference key="NSVScroller" ref="227944089"/>
@@ -2438,6 +2437,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="738103291"/>
+						<reference key="destination" ref="711255106"/>
+					</object>
+					<int key="connectionID">1341</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">dataSource</string>
 						<reference key="source" ref="403734810"/>
 						<reference key="destination" ref="537336965"/>
@@ -2475,6 +2482,14 @@
 						<reference key="destination" ref="537336965"/>
 					</object>
 					<int key="connectionID">1335</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">lbStatus</string>
+						<reference key="source" ref="711255106"/>
+						<reference key="destination" ref="738103291"/>
+					</object>
+					<int key="connectionID">1342</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -4442,7 +4457,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1340</int>
+			<int key="maxID">1342</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4535,11 +4550,16 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="lbStatus">NSTextField</string>
 						<string key="outlineView">OutlineViewController</string>
 						<string key="testLabel">NSTextField</string>
 						<string key="userInput">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="lbStatus">
+							<string key="name">lbStatus</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="outlineView">
 							<string key="name">outlineView</string>
 							<string key="candidateClassName">OutlineViewController</string>

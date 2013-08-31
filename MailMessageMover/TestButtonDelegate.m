@@ -32,16 +32,7 @@
     
     MailEngine *myEngine = [MailEngine sharedInstance];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"getAllMailboxes" ofType:@"scpt"];
-    NSAppleScript *script = [[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
     
-    if (script != nil) {
-        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-        
-        NSLog(@"result == %@", result);
-        
-        NSInteger num = [result numberOfItems];
-        NSLog(@"There are %ld items in the list.", num);
         
         /*
         for (NSInteger idx = 1; idx <= num; ++idx) {
@@ -53,14 +44,7 @@
             
             }
          */
-    }
-    
-    NSInteger num = [[myEngine getAllAccounts] count];
-    for (NSInteger idx = 1; idx <= num; ++idx) {
-        //get the child mailboxes here
-    }
-    
-    [script release];
+
     //[outlineView reloadData];
 }
 

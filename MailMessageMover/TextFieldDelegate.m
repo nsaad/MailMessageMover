@@ -11,6 +11,8 @@
 #import "MailEngine.h"
 
 @implementation TextFieldDelegate
+
+@synthesize lbStatus;
 @synthesize testLabel;
 
 - (void) controlTextDidChange :(NSNotification *) sender {
@@ -23,7 +25,7 @@
     
     NSLog(@"changed the label and creating the data now");
 
-    [outlineView refreshTheData:sender];
+    [outlineView refreshTheData:text];
     
     MailEngine *myEngine = [MailEngine sharedInstance];
     NSLog(@"first item in accounts %@", [[myEngine getAllAccounts] objectAtIndex:0] );
@@ -37,6 +39,20 @@
 
 - (IBAction) controlTextDidBeginEditing:(NSNotification *)obj :(id)sender {
     NSLog(@"In get all mailboxes");
+}
+
+- (void) awakeFromNib {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"getMailMessageInfo" ofType:@"scpt"];
+    NSAppleScript *script = [[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
+    
+    if (script != nil) {
+        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
+        NSString *scriptReturn = [result stringValue];
+        NSLog(@"Found utxt string: %@",scriptReturn);
+        
+        [lbStatus setStringValue:scriptReturn];
+    }
+
 }
 
 @end

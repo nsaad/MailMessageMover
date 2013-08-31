@@ -19,7 +19,7 @@ MailEngine *myEngine;
     self = [super init];
     if (self) {
         myEngine = [MailEngine sharedInstance];
-        [myEngine createFakeData];
+        [myEngine buildInitialSetofData];
         myMailboxes = [myEngine getMyMailboxes];
         
         NSLog(@"Mailboxes contains %@", myMailboxes);
@@ -47,10 +47,14 @@ MailEngine *myEngine;
     return [item name];
 }
 
-- (IBAction) refreshTheData : (id) sender {
+- (IBAction) refreshTheData : (NSString *) text {
     
     NSLog(@"in refreshTheData");
     
+    [myEngine findMailboxesWithText:text];
+    
+    //Sample code used to add a new item to the list when text is editted.
+    /*
     Mailbox *m = [self.outlineViewLocal itemAtRow:[self.outlineViewLocal selectedRow]];
     if (m) {
         [m addChild:[[Mailbox alloc] init]];
@@ -58,11 +62,7 @@ MailEngine *myEngine;
     }
     else
         [myMailboxes addObject:[[Mailbox alloc] init]];
-    
-/*    Mailbox *m = [[Mailbox alloc] initWithName:@"Bling"];
-    NSMutableArray *a = [[NSMutableArray alloc] init];
-    [a addObject:m];
-    self.mailboxes = a;*/
+     */
     
     NSLog(@"running reloadData");
     [self.outlineViewLocal reloadData];
