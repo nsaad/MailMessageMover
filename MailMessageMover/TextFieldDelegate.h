@@ -17,7 +17,6 @@
 @property (nonatomic, strong) IBOutlet NSTextField * lbStatus;
 
 - (IBAction) controlTextDidChange :(id) sender;
-- (IBAction) controlTextDidBeginEditing:(NSNotification *)obj :(id)sender;
-//- (void) awakeFromNib;
+- (void) awakeFromNib;
 
 @end

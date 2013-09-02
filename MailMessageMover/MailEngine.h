@@ -32,7 +32,6 @@
 - (void) createFakeData;
 - (void) buildInitialSetofData;
 - (void) createAllMailboxes : (NSAppleEventDescriptor *) result;
-- (void) getFoldersFromMail : (NSString *) searchText;
 - (void) findMailboxesWithText : (NSString *) text;
 - (NSString *) updateMessageInfo;
 @end

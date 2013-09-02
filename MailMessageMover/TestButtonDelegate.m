@@ -13,16 +13,19 @@
 
 @implementation TestButtonDelegate
 
-@synthesize outlineView, lbStatus, moveMessageButton, goToFolderButton;
+@synthesize outlineView, lbStatus, moveMessageButton, goToFolderButton, errorLabel, cancelButton;
 MailEngine *myEngine;
 
 - (IBAction)moveMessageButtonClicked:(id)sender {
-    NSLog(@"move message button clicked");
+    //NSLog(@"move message button clicked");
     
     Mailbox *selectedItem = [outlineView itemAtRow:[outlineView selectedRow]];
-    NSLog(@"Selected item in outline view is: %@", selectedItem.name);
+    //NSLog(@"Selected item in outline view is: %@", selectedItem.name);
     
-    NSString* scriptTemplate = [NSString stringWithFormat:@" \
+    Boolean *selected = [self checkIfItemSelected:selectedItem];
+    
+    if (selected) {
+        NSString* scriptTemplate = [NSString stringWithFormat:@" \
     tell application \"Mail\" \n \
 	set theMessages to the selected messages of message viewer 1 \n \
 	\n \
@@ -31,64 +34,80 @@ MailEngine *myEngine;
 	end repeat \n \
     end tell", selectedItem.fullPath, selectedItem.accountString];
     
+        NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
+    
+        if (script != nil) {
+            NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
+           //NSLog(@"result = %@", result);
+        }
+    
+        [self focusMailAndQuit];
+    }
+
+}
+
+-(BOOL) checkIfItemSelected : (Mailbox*) item {
+    if (item == NULL) {
+        //NSLog(@"No item has been selected");
+        
+        [errorLabel setStringValue:@"Please select a folder from the list"];
+        return false;
+    } else {
+        [errorLabel setStringValue:@""];
+        return true;
+    }
+}
+
+-(void) focusMailAndQuit {
+    
+    NSString *scriptTemplate = @"Tell application \"Mail\" \
+    activate \
+    end tell";
+    
     NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
     
     if (script != nil) {
         NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-        NSLog(@"result = %@", result);
-    }
-    
-    script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
-    
-    if (script != nil) {
-        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-        NSLog(@"result = %@", result);
+        //NSLog(@"result = %@", result);
     }
     
     [[NSApplication sharedApplication] terminate:nil];
-
 }
 
 - (IBAction)goToFolderButtonClicked:(id)sender {
-    NSLog(@"go to folder button clicked");
+    //NSLog(@"go to folder button clicked");
     
     Mailbox *selectedItem = [outlineView itemAtRow:[outlineView selectedRow]];
-    NSLog(@"Selected item in outline view is: %@", selectedItem.name);
+    //NSLog(@"Selected item in outline view is: %@", selectedItem.name);
     
-    NSString* scriptTemplate = [NSString stringWithFormat:@" \
+    BOOL *selected = [self checkIfItemSelected:selectedItem];
+    
+    if (selected) {
+    
+        NSString* scriptTemplate = [NSString stringWithFormat:@" \
     tell application \"Mail\" \n \
     \n \
     set boxToGoTo to get the mailbox \"%@\" of account \"%@\" \n \
     set selected mailboxes of the front message viewer to boxToGoTo \n \
     \n \
     end tell", selectedItem.fullPath, selectedItem.accountString];
-    NSLog(@"Calling script as follows: %@", scriptTemplate);
+        //NSLog(@"Calling script as follows: %@", scriptTemplate);
     
-    //NSString* actualScript = [NSString stringWithFormat:scriptTemplate, selectedItem.name, selectedItem.accountString];
-    NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
+        NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
     
-    if (script != nil) {
-        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-        NSLog(@"result = %@", result);
+        if (script != nil) {
+            NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
+            //NSLog(@"result = %@", result);
+        }
+    
+        [self focusMailAndQuit];
+        
     }
-    
-    myEngine = [MailEngine sharedInstance];
-    //NSString *message = [myEngine updateMessageInfo];
-    //[lbStatus setStringValue:message];
-    
-    scriptTemplate = @"Tell application \"Mail\" \
-        activate \
-    end tell";
-    
-    script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
-    
-    if (script != nil) {
-        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-        NSLog(@"result = %@", result);
-    }
-    
-    [[NSApplication sharedApplication] terminate:nil];
 
+}
+
+- (IBAction) cancelButtonClicked:(id) sender {
+    [self focusMailAndQuit];
 }
 
 @end

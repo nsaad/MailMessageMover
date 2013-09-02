@@ -19,36 +19,27 @@ MailEngine *myEngine;
 - (void) controlTextDidChange :(NSNotification *) sender {
     NSTextField *changedField = [sender object];
     
-    NSLog(@"in control text did change");
+    //NSLog(@"in control text did change");
     
     NSString *text = [changedField stringValue];
     
-    NSLog(@"changed the label and creating the data now");
+    //NSLog(@"changed the label and creating the data now");
 
     [outlineView refreshTheData:text];
     
     myEngine = [MailEngine sharedInstance];
-    NSLog(@"first item in accounts %@", [[myEngine getAllAccounts] objectAtIndex:0] );
+    //NSLog(@"first item in accounts %@", [[myEngine getAllAccounts] objectAtIndex:0] );
     
 }
 
-- (void)controlTextDidEndEditing:(NSNotification *)obj {
-    NSLog(@"in end editting");
-    return;
-}
-
-- (IBAction) controlTextDidBeginEditing:(NSNotification *)obj :(id)sender {
-    NSLog(@"In get all mailboxes");
-}
-
-- (TextFieldDelegate *) init {
-    NSLog(@"Inited TextField Delegate");
+- (void) awakeFromNib {
+    //NSLog(@"in awake from nib");
+    
     myEngine = [MailEngine sharedInstance];
     NSString *message = [myEngine updateMessageInfo];
-    NSLog(@"updating label with message: %@", message);
+    //NSLog(@"updating label with message: %@", message);
     [lbStatus setStringValue:message];
 
-    return self;
 }
 
 @end

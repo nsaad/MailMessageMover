@@ -22,10 +22,10 @@ MailEngine *myEngine;
         [myEngine buildInitialSetofData];
         myMailboxes = [myEngine getMyMailboxes];
         
-        NSLog(@"Mailboxes contains %@", myMailboxes);
+        //NSLog(@"Mailboxes contains %@", myMailboxes);
     }
     
-    NSLog(@"inited outline view controller");
+    //NSLog(@"inited outline view controller");
     return self;
 }
 
@@ -40,7 +40,7 @@ MailEngine *myEngine;
             if (m.visible) {
                 count++;
             } else {
-                NSLog(@"Ignoring non-visible mailbox in num of children count - at top level ");
+                //NSLog(@"Ignoring non-visible mailbox in num of children count - at top level ");
             }
         }
     } else {
@@ -49,7 +49,7 @@ MailEngine *myEngine;
             if (child.visible) {
                 count++;
             } else {
-                NSLog(@"Ignoring non-visible mailbox in num of children count ");
+                //NSLog(@"Ignoring non-visible mailbox in num of children count ");
             }
         }
     }
@@ -68,7 +68,7 @@ MailEngine *myEngine;
             if (child.visible) {
                 count++;
             } else {
-                NSLog(@"Ignoring non-visible mailbox in num of children count ");
+                //NSLog(@"Ignoring non-visible mailbox in num of children count ");
             }
         }
         
@@ -120,19 +120,19 @@ MailEngine *myEngine;
 - (IBAction) outlineViewClicked : (id) sender {
     NSInteger rowIndex = [_outlineViewLocal clickedRow];
     id item = [_outlineViewLocal itemAtRow:rowIndex];
-    NSLog(@"CLICK HAPPENED %lu", rowIndex);
+    //NSLog(@"CLICK HAPPENED %lu", rowIndex);
     
     Mailbox *m = item;
     
     if ([m.accountString isEqualToString:@""] || m.accountString == NULL) {
         if ([m children]) {
             
-            NSLog(@"Item has children");
+            //NSLog(@"Item has children");
         
-            NSLog(@"Current clicked row: %lu", rowIndex);
+            //NSLog(@"Current clicked row: %lu", rowIndex);
             NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:(rowIndex + 1)];
         
-            NSLog(@"Setting selected row to %lu", (rowIndex + 1));
+            //NSLog(@"Setting selected row to %lu", (rowIndex + 1));
             [_outlineViewLocal selectRowIndexes:indexSet byExtendingSelection:NO];
             [_outlineViewLocal scrollRowToVisible:rowIndex + 1];
         }
@@ -145,13 +145,13 @@ MailEngine *myEngine;
     
     Mailbox *m = item;
     
-        NSLog(@"In shouldSelectItem method %@:%@", m.name, m.accountString);
+        //NSLog(@"In shouldSelectItem method %@:%@", m.name, m.accountString);
     
     if ([m.accountString isEqualToString:@""] || m.accountString == NULL) {
-        NSLog(@"Account of mailbox %@ is empty, isn't it %@", m.name, m.accountString);
+        //NSLog(@"Account of mailbox %@ is empty, isn't it %@", m.name, m.accountString);
         
         [outlineView expandItem:item];
-        NSLog(@"Expanded item");
+        //NSLog(@"Expanded item");
         
         return NO;
     }
@@ -161,25 +161,12 @@ MailEngine *myEngine;
 
 - (IBAction) refreshTheData : (NSString *) text {
     
-    NSLog(@"in refreshTheData");
+    //NSLog(@"in refreshTheData");
     
     [myEngine findMailboxesWithText:text];
     for (Mailbox *m in myMailboxes) {
         [self expandAllItems:m];
     }
-    
-    //Sample code used to add a new item to the list when text is editted.
-    /*
-    Mailbox *m = [self.outlineViewLocal itemAtRow:[self.outlineViewLocal selectedRow]];
-    if (m) {
-        [m addChild:[[Mailbox alloc] init]];
-        [self.outlineViewLocal expandItem:m];
-    }
-    else
-        [myMailboxes addObject:[[Mailbox alloc] init]];
-     */
-    
-    NSLog(@"running reloadData");
     [self.outlineViewLocal reloadData];
 }
 
@@ -191,11 +178,4 @@ MailEngine *myEngine;
         }
     }
 }
-
-/*- (IBAction) changeData : (id) sender {
-    NSLog(@"changing the data");
-    [self.mailboxes addObject:[[Mailbox alloc] initWithName:@"Test mailbox"]];
-    [self.outlineView reloadData];
-}
-*/
 @end
