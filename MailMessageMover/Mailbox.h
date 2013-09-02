@@ -18,6 +18,8 @@
 
 @property (copy) NSString * accountString;
 @property (copy) NSString * parentString;
+
+@property (copy) NSString * fullPath;
 @property Boolean duplicateName;
 
 - (id) initWithName : (NSString *) name;

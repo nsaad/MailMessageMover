@@ -13,7 +13,8 @@
 @implementation TextFieldDelegate
 
 @synthesize lbStatus;
-@synthesize testLabel;
+
+MailEngine *myEngine;
 
 - (void) controlTextDidChange :(NSNotification *) sender {
     NSTextField *changedField = [sender object];
@@ -21,13 +22,12 @@
     NSLog(@"in control text did change");
     
     NSString *text = [changedField stringValue];
-    [testLabel setStringValue:text];
     
     NSLog(@"changed the label and creating the data now");
 
     [outlineView refreshTheData:text];
     
-    MailEngine *myEngine = [MailEngine sharedInstance];
+    myEngine = [MailEngine sharedInstance];
     NSLog(@"first item in accounts %@", [[myEngine getAllAccounts] objectAtIndex:0] );
     
 }
@@ -41,18 +41,14 @@
     NSLog(@"In get all mailboxes");
 }
 
-- (void) awakeFromNib {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"getMailMessageInfo" ofType:@"scpt"];
-    NSAppleScript *script = [[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
-    
-    if (script != nil) {
-        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-        NSString *scriptReturn = [result stringValue];
-        NSLog(@"Found utxt string: %@",scriptReturn);
-        
-        [lbStatus setStringValue:scriptReturn];
-    }
+- (TextFieldDelegate *) init {
+    NSLog(@"Inited TextField Delegate");
+    myEngine = [MailEngine sharedInstance];
+    NSString *message = [myEngine updateMessageInfo];
+    NSLog(@"updating label with message: %@", message);
+    [lbStatus setStringValue:message];
 
+    return self;
 }
 
 @end

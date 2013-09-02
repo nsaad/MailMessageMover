@@ -141,6 +141,7 @@ static MailEngine *_sharedInstance;
             Mailbox *m = [[ Mailbox alloc] initWithName:name];
             m.parentString = parentPath;
             m.accountString = account;
+            m.fullPath = path;
             
             NSLog(@"Created mailbox: %@ under %@ in %@ [key: %@]" , name, parentPath, account, name);
             
@@ -180,19 +181,48 @@ static MailEngine *_sharedInstance;
 
 - (void) findMailboxesWithText: (NSString *) text {
     
-    NSMutableArray *copyToUpdate = [[NSMutableArray alloc] initWithArray:allRoots copyItems:YES];
-    for (Mailbox *m in copyToUpdate) {
-        NSLog(@"name in copy: %@", m.name);
-        m.name = @"My test";
+    for (Mailbox *m in allRoots) {
+        NSLog(@"IN FIND MAILBOXES: name of mailbox: %@", m.name);
         
-//        [self updateNodeAndChildrenVisibility: m];
-    }
-    NSLog(@"and in original allRoots:");
-    for (Mailbox *m in copyToUpdate) {
-        NSLog(@"name in allRoots: %@", m.name);
+        [self updateNodeAndChildrenVisibility: m : text];
     }
     
     //update myMailboxes to have 
+}
+
+- (BOOL) updateNodeAndChildrenVisibility : (Mailbox *) m : (NSString *) text {
+    
+    if ([m.name isEqualToString: @"NE Hotmail"]) {
+        NSLog(@"LOOK HERE ------------------------------------------------------");
+    } else {
+        NSLog(@"below-------------------below");
+    }
+    NSArray *arr = m.children;
+    BOOL anyChildVisible = false;
+    for (Mailbox *child in arr) {
+        if ([self updateNodeAndChildrenVisibility : child : text]) {
+            anyChildVisible = true;
+        }
+    }
+    NSLog(@" anyChildVisible: %d", anyChildVisible);
+    
+    if (!anyChildVisible) {
+        if ([text isEqualToString:@""]) {
+            NSLog(@"Text is empty, so setting to visible");
+            m.visible = true;
+        } else if ([m.name rangeOfString:text options:NSCaseInsensitiveSearch].location != NSNotFound) {
+            NSLog(@"Found text %@ in %@", text, m.name);
+            m.visible = true;
+        } else {
+            m.visible = false;
+        }
+    //If a child is visible, show this box regardless of it matching text
+    } else {
+        m.visible = true;
+    }
+    
+    NSLog(@"Box %@ is %d", m.name, m.visible);
+    return m.visible;
 }
 
 -(void) addUniqueMailboxToDictionary : (NSMutableDictionary *) dict : (Mailbox *) m {
@@ -269,18 +299,18 @@ static MailEngine *_sharedInstance;
     
     for(id key in mailboxDictionary) {
         Mailbox *box = [mailboxDictionary objectForKey:key];
-        NSLog(@"first key: %@", key);
+//        NSLog(@"first key: %@", key);
         NSString *parentString = box.parentString;
-                NSLog(@"first parent: %@", parentString);
+//                NSLog(@"first parent: %@", parentString);
         
         if (parentString != nil) {
             Mailbox *parent = [mailboxDictionary objectForKey:parentString];
-            NSLog(@"got parent object: %@", parent);
+//            NSLog(@"got parent object: %@", parent);
             if (parent == nil) {
                 
                 NSArray *stringToJoin = [[NSArray alloc] initWithObjects:box.accountString, box.parentString, nil];
                 NSString *compoundKey = [stringToJoin componentsJoinedByString:@"_"];
-                NSLog(@"Trying with compound key %@", compoundKey);
+//                NSLog(@"Trying with compound key %@", compoundKey);
 
                 parent = [mailboxDictionary objectForKey:compoundKey];
                 if (parent == nil) {
@@ -297,6 +327,27 @@ static MailEngine *_sharedInstance;
             }
         }
     }
+}
+
+- (NSString *) updateMessageInfo {
+    NSLog(@"In updateMessageInfo");
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"getMailMessageInfo" ofType:@"scpt"];
+    NSAppleScript *script = [[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
+    
+    if (script != nil) {
+        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
+        NSString *scriptReturn = [result stringValue];
+        NSLog(@"Found utxt string: %@",scriptReturn);
+        
+        if (scriptReturn == nil)
+            return @"N/A";
+        else
+            return scriptReturn;
+    } else {
+        return @"N/A";
+    }
+    return @"hello world";
 }
 
 -(void) createFakeData {

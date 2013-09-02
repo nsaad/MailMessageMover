@@ -12,7 +12,10 @@
 
 @property (retain) IBOutlet NSOutlineView *outlineView;
 @property (nonatomic, strong) IBOutlet NSTextField * lbStatus;
+@property (nonatomic, strong) IBOutlet NSButton * moveMessageButton;
+@property (nonatomic, strong) IBOutlet NSButton * goToFolderButton;
 
-- (IBAction)testButtonClicked:(id)sender;
+- (IBAction)moveMessageButtonClicked:(id)sender;
+- (IBAction)goToFolderButtonClicked:(id)sender;
 
 @end

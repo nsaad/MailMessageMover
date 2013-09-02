@@ -14,11 +14,13 @@ tell application "Mail" to try
 	set currMsgsList to selected messages of the front message viewer
 	if (exists currMsgsList) then
 		set firstMsg to first item of currMsgsList
-		set messageSubject to subject of firstMsg
+		set messageDetail to "Message: [" & subject of firstMsg & "]"
+	else
+		set messageDetail to "No message selected"
 	end if
 	
-	set workingInMessage to ("Working in [" & currFolderName & "] of account [" & currAccount & "]
-Message [" & messageSubject & "]")
+	set workingInMessage to ("Working in [" & currFolderName & "] of account [" & currAccount & "]\n" & messageDetail)
 	
 	return workingInMessage
 end try
+

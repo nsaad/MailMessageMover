@@ -15,6 +15,7 @@
 @property (retain) IBOutlet NSOutlineView *outlineViewLocal;
 
 - (IBAction) refreshTheData : (id) sender;
+- (IBAction) outlineViewClicked : (id) sender;
 //- (IBAction) changeData: (id) sender;
 //- (IBAction) setBaseData: (id) sender;
 

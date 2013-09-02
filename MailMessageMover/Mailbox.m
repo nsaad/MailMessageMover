@@ -21,6 +21,7 @@
         _children = [[ NSMutableArray alloc] init];
         _parent = nil;
         _parentString = nil;
+        _fullPath = nil;
         _account = nil;
         _accountString = nil;
         _visible = true;
@@ -53,6 +54,7 @@
         [copy setAccountString:self.accountString];
         [copy setVisible:self.visible];
         [copy setDuplicateName:self.duplicateName];
+        [copy setFullPath:self.fullPath];
     }
     
     return copy;
