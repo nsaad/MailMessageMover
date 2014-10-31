@@ -21,17 +21,22 @@
 @property (nonatomic, retain) NSMutableArray *allMailboxes;
 @property (nonatomic, retain) NSMutableArray *allRoots;
 @property (nonatomic, retain) NSMutableDictionary *mailboxDictionary;
+@property (nonatomic) NSInteger countOfVisible;
+@property (nonatomic) NSInteger countOfMatched;
 
 + (MailEngine *) sharedInstance;
 
 -(void) addToAccounts : (NSString *) newAccount;
--(NSMutableArray *) getAllAccounts;
 
+-(NSMutableArray *) getAllAccounts;
 -(NSMutableArray *) getMyMailboxes;
 
 - (void) createFakeData;
 - (void) buildInitialSetofData;
 - (void) createAllMailboxes : (NSAppleEventDescriptor *) result;
-- (void) findMailboxesWithText : (NSString *) text;
+- (NSInteger) findMailboxesWithText : (NSString *) text;
 - (NSString *) updateMessageInfo;
+
+- (NSString *) saveFilePath;
+- (NSInteger) getCountOfVisible;
 @end

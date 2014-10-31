@@ -1,0 +1,40 @@
+
+- sometimes last selected folder is selected correctly in the view, other times it isn't, just the text updated
+    Have more elaborate TODO in MailMessageMoverDelegateApp.m explaining issue
+- add icon to app
+- when X clicked in window, quit app
+- if hit enter, with nothing selected, set the focus to either the textfield or the view
+
+Resolved itself (looks like it - Nov 25)
+- Search for "sa", get a long list, then scroll down and click on the "SA" bit, but the scroll goes back up and you have to go down manually
+
+Bug (is it really an issue?)
+- Job Stuff considered top level account, wrong should be under Gmail
+
+
+
+
+
+
+
+AwakeFromNib issues:
+
+NOT WORKING
+
+2013-11-25 13:17:42.687 MailMessageMover[48926:303] In save file path method
+2013-11-25 13:17:42.687 MailMessageMover[48926:303] item at index 0 is jon-mixed-lists
+2013-11-25 13:17:42.687 MailMessageMover[48926:303] in awake from nib
+
+jon-mixed-list shows in box but doesn’t update view
+
+
+WORKING
+
+2013-11-25 13:18:22.187 MailMessageMover[48949:303] in awake from nib
+2013-11-25 13:18:22.199 MailMessageMover[48949:303] In save file path method
+2013-11-25 13:18:22.199 MailMessageMover[48949:303] item at index 0 is jon-mixed-lists
+2013-11-25 13:18:22.199 MailMessageMover[48949:303] in observe, object is <NSTextField: 0x60000018c300>
+2013-11-25 13:18:22.199 MailMessageMover[48949:303] i'm aware the string got set: jon-mixed-lists
+2013-11-25 13:18:22.200 MailMessageMover[48949:303] Found text jon-mixed-lists in jon-mixed-lists -- count of matched 1
+2013-11-25 13:18:22.200 MailMessageMover[48949:303] in refresh, countOfMatched: 1
+2013-11-25 13:18:22.200 MailMessageMover[48949:303] Only one match - count of visible 3

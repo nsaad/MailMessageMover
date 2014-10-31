@@ -12,8 +12,20 @@
 		9363DBC417B1262C009BDBEE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9363DBC217B1262C009BDBEE /* InfoPlist.strings */; };
 		9363DBC617B1262C009BDBEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9363DBC517B1262C009BDBEE /* main.m */; };
 		9363DBCA17B1262C009BDBEE /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9363DBC817B1262C009BDBEE /* Credits.rtf */; };
-		9363DBCC17B1262C009BDBEE /* XYZAppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 9363DBCB17B1262C009BDBEE /* XYZAppDelegate.applescript */; };
 		9363DBCF17B1262C009BDBEE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9363DBCD17B1262C009BDBEE /* MainMenu.xib */; };
+		9363DBDA17B42103009BDBEE /* TextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9363DBD917B42103009BDBEE /* TextFieldDelegate.m */; };
+		938E998417D4D84C0003932F /* ViewTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E998317D4D84C0003932F /* ViewTextFieldDelegate.m */; };
+		938E998B17D4DED50003932F /* msgfiler.png in Resources */ = {isa = PBXBuildFile; fileRef = 938E998A17D4DED50003932F /* msgfiler.png */; };
+		938E998E17D4E17C0003932F /* MailMessageMoverAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E998D17D4E17C0003932F /* MailMessageMoverAppDelegate.m */; };
+		938E999217D628FC0003932F /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = 938E999117D628FC0003932F /* ToDo */; };
+		93A55B7017D0B1A700BEB733 /* getMailMessageInfo.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93A55B6F17D0B1A700BEB733 /* getMailMessageInfo.scpt */; };
+		93A55B7217D0D9FF00BEB733 /* getAllMailboxes.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93A55B7117D0D9FF00BEB733 /* getAllMailboxes.scpt */; };
+		93A55B7417D0DB1A00BEB733 /* getAllAccounts.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93A55B7317D0DB1A00BEB733 /* getAllAccounts.scpt */; };
+		93B10FE31961BA530013B7F4 /* countSelectedMessages.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93B10FE21961BA530013B7F4 /* countSelectedMessages.scpt */; };
+		93E61D0517C4E0DF00683689 /* Mailbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0417C4E0DF00683689 /* Mailbox.m */; };
+		93E61D0817C4E28A00683689 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0717C4E28A00683689 /* OutlineViewController.m */; };
+		93E61D0B17C5008900683689 /* MailEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0A17C5008900683689 /* MailEngine.m */; };
+		93E61D0E17C50BEF00683689 /* TestButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0D17C50BEF00683689 /* TestButtonDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +40,27 @@
 		9363DBC517B1262C009BDBEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9363DBC717B1262C009BDBEE /* MailMessageMover-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MailMessageMover-Prefix.pch"; sourceTree = "<group>"; };
 		9363DBC917B1262C009BDBEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		9363DBCB17B1262C009BDBEE /* XYZAppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = XYZAppDelegate.applescript; sourceTree = "<group>"; };
 		9363DBCE17B1262C009BDBEE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9363DBD817B42103009BDBEE /* TextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldDelegate.h; sourceTree = "<group>"; };
+		9363DBD917B42103009BDBEE /* TextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldDelegate.m; sourceTree = "<group>"; };
+		938E998217D4D84C0003932F /* ViewTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTextFieldDelegate.h; sourceTree = "<group>"; };
+		938E998317D4D84C0003932F /* ViewTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTextFieldDelegate.m; sourceTree = "<group>"; };
+		938E998A17D4DED50003932F /* msgfiler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgfiler.png; sourceTree = "<group>"; };
+		938E998C17D4E17C0003932F /* MailMessageMoverAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailMessageMoverAppDelegate.h; sourceTree = "<group>"; };
+		938E998D17D4E17C0003932F /* MailMessageMoverAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailMessageMoverAppDelegate.m; sourceTree = "<group>"; };
+		938E999117D628FC0003932F /* ToDo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
+		93A55B6F17D0B1A700BEB733 /* getMailMessageInfo.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getMailMessageInfo.scpt; sourceTree = "<group>"; };
+		93A55B7117D0D9FF00BEB733 /* getAllMailboxes.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getAllMailboxes.scpt; sourceTree = "<group>"; };
+		93A55B7317D0DB1A00BEB733 /* getAllAccounts.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getAllAccounts.scpt; sourceTree = "<group>"; };
+		93B10FE21961BA530013B7F4 /* countSelectedMessages.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = countSelectedMessages.scpt; sourceTree = "<group>"; };
+		93E61D0317C4E0DF00683689 /* Mailbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mailbox.h; sourceTree = "<group>"; };
+		93E61D0417C4E0DF00683689 /* Mailbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mailbox.m; sourceTree = "<group>"; };
+		93E61D0617C4E28A00683689 /* OutlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewController.h; sourceTree = "<group>"; };
+		93E61D0717C4E28A00683689 /* OutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewController.m; sourceTree = "<group>"; };
+		93E61D0917C5008900683689 /* MailEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailEngine.h; sourceTree = "<group>"; };
+		93E61D0A17C5008900683689 /* MailEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailEngine.m; sourceTree = "<group>"; };
+		93E61D0C17C50BEF00683689 /* TestButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestButtonDelegate.h; sourceTree = "<group>"; };
+		93E61D0D17C50BEF00683689 /* TestButtonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestButtonDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +79,8 @@
 		9363DBAB17B1262C009BDBEE = {
 			isa = PBXGroup;
 			children = (
+				938E999117D628FC0003932F /* ToDo */,
+				938E998A17D4DED50003932F /* msgfiler.png */,
 				9363DBBF17B1262C009BDBEE /* MailMessageMover */,
 				9363DBB617B1262C009BDBEE /* Frameworks */,
 				9363DBB517B1262C009BDBEE /* Products */,
@@ -85,8 +118,21 @@
 		9363DBBF17B1262C009BDBEE /* MailMessageMover */ = {
 			isa = PBXGroup;
 			children = (
-				9363DBCB17B1262C009BDBEE /* XYZAppDelegate.applescript */,
+				9363DBD817B42103009BDBEE /* TextFieldDelegate.h */,
+				9363DBD917B42103009BDBEE /* TextFieldDelegate.m */,
+				93E61D0C17C50BEF00683689 /* TestButtonDelegate.h */,
+				93E61D0D17C50BEF00683689 /* TestButtonDelegate.m */,
+				938E998C17D4E17C0003932F /* MailMessageMoverAppDelegate.h */,
+				938E998D17D4E17C0003932F /* MailMessageMoverAppDelegate.m */,
 				9363DBCD17B1262C009BDBEE /* MainMenu.xib */,
+				93E61D0317C4E0DF00683689 /* Mailbox.h */,
+				93E61D0417C4E0DF00683689 /* Mailbox.m */,
+				93E61D0617C4E28A00683689 /* OutlineViewController.h */,
+				93E61D0717C4E28A00683689 /* OutlineViewController.m */,
+				93E61D0917C5008900683689 /* MailEngine.h */,
+				93E61D0A17C5008900683689 /* MailEngine.m */,
+				938E998217D4D84C0003932F /* ViewTextFieldDelegate.h */,
+				938E998317D4D84C0003932F /* ViewTextFieldDelegate.m */,
 				9363DBC017B1262C009BDBEE /* Supporting Files */,
 			);
 			path = MailMessageMover;
@@ -95,11 +141,15 @@
 		9363DBC017B1262C009BDBEE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				93B10FE21961BA530013B7F4 /* countSelectedMessages.scpt */,
 				9363DBC117B1262C009BDBEE /* MailMessageMover-Info.plist */,
 				9363DBC217B1262C009BDBEE /* InfoPlist.strings */,
 				9363DBC517B1262C009BDBEE /* main.m */,
 				9363DBC717B1262C009BDBEE /* MailMessageMover-Prefix.pch */,
 				9363DBC817B1262C009BDBEE /* Credits.rtf */,
+				93A55B6F17D0B1A700BEB733 /* getMailMessageInfo.scpt */,
+				93A55B7117D0D9FF00BEB733 /* getAllMailboxes.scpt */,
+				93A55B7317D0DB1A00BEB733 /* getAllAccounts.scpt */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -131,7 +181,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = XYZ;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Nabeel Saad";
 			};
 			buildConfigurationList = 9363DBAF17B1262C009BDBEE /* Build configuration list for PBXProject "MailMessageMover" */;
@@ -159,6 +209,12 @@
 				9363DBC417B1262C009BDBEE /* InfoPlist.strings in Resources */,
 				9363DBCA17B1262C009BDBEE /* Credits.rtf in Resources */,
 				9363DBCF17B1262C009BDBEE /* MainMenu.xib in Resources */,
+				93A55B7017D0B1A700BEB733 /* getMailMessageInfo.scpt in Resources */,
+				93A55B7217D0D9FF00BEB733 /* getAllMailboxes.scpt in Resources */,
+				93B10FE31961BA530013B7F4 /* countSelectedMessages.scpt in Resources */,
+				93A55B7417D0DB1A00BEB733 /* getAllAccounts.scpt in Resources */,
+				938E998B17D4DED50003932F /* msgfiler.png in Resources */,
+				938E999217D628FC0003932F /* ToDo in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +226,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9363DBC617B1262C009BDBEE /* main.m in Sources */,
-				9363DBCC17B1262C009BDBEE /* XYZAppDelegate.applescript in Sources */,
+				9363DBDA17B42103009BDBEE /* TextFieldDelegate.m in Sources */,
+				93E61D0517C4E0DF00683689 /* Mailbox.m in Sources */,
+				93E61D0817C4E28A00683689 /* OutlineViewController.m in Sources */,
+				93E61D0B17C5008900683689 /* MailEngine.m in Sources */,
+				93E61D0E17C50BEF00683689 /* TestButtonDelegate.m in Sources */,
+				938E998417D4D84C0003932F /* ViewTextFieldDelegate.m in Sources */,
+				938E998E17D4E17C0003932F /* MailMessageMoverAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +270,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -240,7 +301,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -304,6 +364,7 @@
 				9363DBD417B1262C009BDBEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

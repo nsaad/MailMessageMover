@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Mailbox.h"
 
 @interface TestButtonDelegate : NSObject
 
@@ -17,8 +18,9 @@
 @property (nonatomic, strong) IBOutlet NSButton * goToFolderButton;
 @property (nonatomic, strong) IBOutlet NSButton * cancelButton;
 
-- (IBAction)moveMessageButtonClicked:(id)sender;
-- (IBAction)goToFolderButtonClicked:(id)sender;
+- (IBAction) moveMessageButtonClicked:(id)sender;
+- (void) moveTheMessage : (Mailbox *) selectedItem;
+- (IBAction) goToFolderButtonClicked:(id)sender;
 - (IBAction) cancelButtonClicked:(id) sender;
 
 @end

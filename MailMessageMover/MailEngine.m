@@ -16,10 +16,11 @@ NSMutableArray *allMailboxes;
 NSMutableArray *allAccounts;
 
 NSMutableArray *allRoots;
-//NSMutableArray *allLeaves;
+
+NSInteger countOfMatched;
 
 static MailEngine *_sharedInstance;
-@synthesize allAccounts, allMailboxes, allRoots, myMailboxes, mailboxDictionary;
+@synthesize allAccounts, allMailboxes, allRoots, myMailboxes, mailboxDictionary, countOfVisible, countOfMatched;
 
 + (MailEngine *) sharedInstance
 {
@@ -177,13 +178,18 @@ static MailEngine *_sharedInstance;
     }
 }
 
-- (void) findMailboxesWithText: (NSString *) text {
+- (NSInteger) findMailboxesWithText: (NSString *) text {
+    
+    countOfMatched = 0;
+    countOfVisible = 0;
     
     for (Mailbox *m in allRoots) {
         //NSLog(@"IN FIND MAILBOXES: name of mailbox: %@", m.name);
         
         [self updateNodeAndChildrenVisibility: m : text];
     }
+    
+    return countOfMatched;
     
     //update myMailboxes to have 
 }
@@ -204,7 +210,8 @@ static MailEngine *_sharedInstance;
             //NSLog(@"Text is empty, so setting to visible");
             m.visible = true;
         } else if ([m.name rangeOfString:text options:NSCaseInsensitiveSearch].location != NSNotFound) {
-            //NSLog(@"Found text %@ in %@", text, m.name);
+            countOfMatched++;
+            NSLog(@"Found text %@ in %@ -- count of matched %lu", text, m.name, countOfMatched);
             m.visible = true;
         } else {
             m.visible = false;
@@ -215,6 +222,9 @@ static MailEngine *_sharedInstance;
     }
     
     //NSLog(@"Box %@ is %d", m.name, m.visible);
+    if (m.visible) {
+        countOfVisible++;
+    }
     return m.visible;
 }
 
@@ -336,7 +346,39 @@ static MailEngine *_sharedInstance;
     } else {
         return @"N/A";
     }
-    return @"hello world";
+}
+
+- (NSString *) updateMessageCount {
+    NSLog(@"In MessageCount");
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"countSelectedMessages" ofType:@"scpt"];
+    NSAppleScript *script = [[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
+    
+    if (script != nil) {
+        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
+        NSString *scriptReturn = [result stringValue];
+        //NSLog(@"Found utxt string: %@",scriptReturn);
+        
+        if (scriptReturn == nil)
+            return @"N/A";
+        else
+            return scriptReturn;
+    } else {
+        return @"N/A";
+    }
+}
+
+
+
+-(NSString*) saveFilePath{
+    NSLog(@"In save file path method");
+    
+    NSString* path = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/lastSearch.plist"];
+    return path;
+}
+
+- (NSInteger) getCountOfVisible {
+    return countOfVisible;
 }
 
 -(void) createFakeData {

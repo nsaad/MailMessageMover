@@ -12,7 +12,7 @@
 @implementation OutlineViewController
 
 MailEngine *myEngine;
-@synthesize myMailboxes;
+@synthesize myMailboxes, tbDelegate;
 
 - (id) init {
     
@@ -95,6 +95,7 @@ MailEngine *myEngine;
             }
             
         }
+        //TODO there is a bug here, sometimes item is null and index is 0 and we reach the warning at the bottom 
     } else {
         NSArray *arr = [item children];
         for (Mailbox *child in arr) {
@@ -108,7 +109,7 @@ MailEngine *myEngine;
         }
     }
     
-    NSLog(@"WARNING - shouldn't arrive here");
+    NSLog(@"WARNING - shouldn't arrive here - item %@ and index %lu", item, index);
     return [[Mailbox alloc] init];
     //return !item ? [myMailboxes objectAtIndex:index] : [[item children] objectAtIndex:index];
 }
@@ -140,6 +141,20 @@ MailEngine *myEngine;
     
 }
 
+- (void) awakeFromNib {
+    
+    [_outlineViewLocal setDoubleAction:@selector(onDoubleClick:)];
+    NSLog(@"OutlineViewController awakeFromNib");
+}
+
+- (IBAction) onDoubleClick : (id) sender {
+    NSLog(@"in double click");
+    Mailbox *selectedItem = [_outlineViewLocal itemAtRow:[_outlineViewLocal selectedRow]];
+    NSLog(@"selected item is: %@", [selectedItem name]);
+    [tbDelegate moveTheMessage : selectedItem];
+    
+}
+
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item {
     
@@ -163,11 +178,25 @@ MailEngine *myEngine;
     
     //NSLog(@"in refreshTheData");
     
-    [myEngine findMailboxesWithText:text];
+    NSInteger countOfMatched = [myEngine findMailboxesWithText:text];
+
     for (Mailbox *m in myMailboxes) {
         [self expandAllItems:m];
     }
     [self.outlineViewLocal reloadData];
+    
+    NSInteger exactMatch = 1;
+    NSLog(@"in refresh, countOfMatched: %lu", countOfMatched);
+    if (countOfMatched == exactMatch) {
+        NSInteger rowToSelect = [myEngine getCountOfVisible];
+        NSLog(@"Only one match - count of visible %lu", rowToSelect);
+        
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:(rowToSelect -1)];
+        [_outlineViewLocal selectRowIndexes:indexSet byExtendingSelection:NO];
+        [_outlineViewLocal scrollRowToVisible:rowToSelect];
+    } else {
+        NSLog(@"In refresh, more then one match");
+    }
 }
 
 -(void) expandAllItems: (Mailbox *) m {
@@ -178,4 +207,30 @@ MailEngine *myEngine;
         }
     }
 }
+
+//- (void) keyDown:(NSEvent *)event {
+//    NSLog(@"In key down on outline view");
+//}
+//
+//- (void) mouseDown:(NSEvent *)event {
+//    NSLog(@"In mouse down on outline view");
+//}
+//
+//
+//- (BOOL)acceptsFirstResponder
+//{
+//    NSLog(@"in accepts first responder");
+//    return YES;
+//};
+//
+//-(BOOL)canBecomeFirstResponder {
+//    NSLog(@"in can become first responder");
+//    return YES;
+//}
+//
+//-(BOOL)becomeFirstResponder {
+//    NSLog(@"in  become first responder");
+//    return YES;
+//}
+
 @end
