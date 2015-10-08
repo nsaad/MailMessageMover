@@ -1,4 +1,4 @@
-utf-8;134217984n "Mail"
+tell application "Mail"
 	
 	set allMailboxes to every mailbox of every account
 	return allMailboxes

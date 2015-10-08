@@ -1,4 +1,4 @@
-utf-8;134217984n "Mail" to try
+tell application "Mail" to try
 	
 	--Get the current mailbox
 	set currentMailboxes to (selected mailboxes of message viewer 1)

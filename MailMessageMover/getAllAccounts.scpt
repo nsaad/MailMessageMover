@@ -1,4 +1,4 @@
-utf-8;134217984n "Mail"
+tell application "Mail"
 	
 	set allaccounts to the name of every account
 	return allaccounts
