@@ -27,6 +27,7 @@
 		93E61D0B17C5008900683689 /* MailEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0A17C5008900683689 /* MailEngine.m */; };
 		B903B0351BC699AE00EA5404 /* MailCountLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B903B0341BC699AE00EA5404 /* MailCountLabelDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B98BA7011BC6858C00B009E6 /* MailSubjectLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B98BA7001BC6858C00B009E6 /* MailSubjectLabelDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		B9B4FCC11BC6AFCD004E9DEF /* TestButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC01BC6AFCD004E9DEF /* TestButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		B903B0341BC699AE00EA5404 /* MailCountLabelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailCountLabelDelegate.m; sourceTree = "<group>"; };
 		B98BA6FF1BC6858C00B009E6 /* MailSubjectLabelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailSubjectLabelDelegate.h; sourceTree = "<group>"; };
 		B98BA7001BC6858C00B009E6 /* MailSubjectLabelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailSubjectLabelDelegate.m; sourceTree = "<group>"; };
+		B9B4FCBF1BC6AFCD004E9DEF /* TestButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestButtonDelegate.h; sourceTree = "<group>"; };
+		B9B4FCC01BC6AFCD004E9DEF /* TestButtonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestButtonDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				B903B0341BC699AE00EA5404 /* MailCountLabelDelegate.m */,
 				9363DBD817B42103009BDBEE /* TextFieldDelegate.h */,
 				9363DBD917B42103009BDBEE /* TextFieldDelegate.m */,
+				B9B4FCBF1BC6AFCD004E9DEF /* TestButtonDelegate.h */,
+				B9B4FCC01BC6AFCD004E9DEF /* TestButtonDelegate.m */,
 				938E998C17D4E17C0003932F /* MailMessageMoverAppDelegate.h */,
 				938E998D17D4E17C0003932F /* MailMessageMoverAppDelegate.m */,
 				9363DBCD17B1262C009BDBEE /* MainMenu.xib */,
@@ -232,6 +237,7 @@
 			files = (
 				9363DBC617B1262C009BDBEE /* main.m in Sources */,
 				9363DBDA17B42103009BDBEE /* TextFieldDelegate.m in Sources */,
+				B9B4FCC11BC6AFCD004E9DEF /* TestButtonDelegate.m in Sources */,
 				93E61D0517C4E0DF00683689 /* Mailbox.m in Sources */,
 				93E61D0817C4E28A00683689 /* OutlineViewController.m in Sources */,
 				B903B0351BC699AE00EA5404 /* MailCountLabelDelegate.m in Sources */,
