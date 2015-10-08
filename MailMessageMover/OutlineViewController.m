@@ -118,6 +118,10 @@ MailEngine *myEngine;
     return [item name];
 }
 
+- (IBAction) outlineViewDoubleClicked : (id) sender {
+    //NSLog(@"In doubleclicked")
+}
+
 - (IBAction) outlineViewClicked : (id) sender {
     NSInteger rowIndex = [_outlineViewLocal clickedRow];
     id item = [_outlineViewLocal itemAtRow:rowIndex];
