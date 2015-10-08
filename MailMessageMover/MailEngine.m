@@ -328,26 +328,6 @@ static MailEngine *_sharedInstance;
     }
 }
 
-- (NSString *) updateMessageInfo {
-    //NSLog(@"In updateMessageInfo");
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"getMailMessageInfo" ofType:@"scpt"];
-    NSAppleScript *script = [[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
-    
-    if (script != nil) {
-        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-        NSString *scriptReturn = [result stringValue];
-        NSLog(@"updateMessageInfo script return: %@",scriptReturn);
-        
-        if (scriptReturn == nil)
-            return @"N/A";
-        else
-            return scriptReturn;
-    } else {
-        return @"N/A";
-    }
-}
-
 - (NSString *) updateMessageCount {
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"countSelectedMessages" ofType:@"scpt"];

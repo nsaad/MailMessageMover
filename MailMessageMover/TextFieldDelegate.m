@@ -9,7 +9,6 @@
 #import "TextFieldDelegate.h"
 #import "OutlineViewController.h"
 #import "MailEngine.h"
-#import "TestButtonDelegate.h"
 
 @implementation TextFieldDelegate
 
@@ -137,9 +136,9 @@ static int TextFieldKVOContext = 0;
     //NSLog(@"in awake from nib");
     
     myEngine = [MailEngine sharedInstance];
-    NSString *message = [myEngine updateMessageInfo];
+//    NSString *message = [myEngine updateMessageInfo];
     //NSLog(@"updating label with message: %@", message);
-    [lbStatus setStringValue:message];
+//    [lbStatus setStringValue:message];
     
     NSString *messageCount = [myEngine updateMessageCount];
     
@@ -153,14 +152,6 @@ static int TextFieldKVOContext = 0;
         [lbMessageCount setStringValue:messageCount];
     } else {
         [lbMessageCount setStringValue:@""];
-    }
-
-    NSRange range = [message rangeOfString:@"No message selected" options:NSCaseInsensitiveSearch];
-    //NSLog(@"rnage location: %lu", range.location);
-    
-    if (range.location != NSNotFound) {
-        [errorLabel setStringValue:@"No messages selected, moving not an option."];
-        [moveButton setEnabled:false];
     }
     
     if (userInput) {

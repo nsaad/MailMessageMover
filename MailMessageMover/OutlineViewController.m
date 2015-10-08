@@ -12,7 +12,7 @@
 @implementation OutlineViewController
 
 MailEngine *myEngine;
-@synthesize myMailboxes, tbDelegate;
+@synthesize myMailboxes;
 
 - (id) init {
     
@@ -151,13 +151,14 @@ MailEngine *myEngine;
     NSLog(@"OutlineViewController awakeFromNib");
 }
 
+/*
 - (IBAction) onDoubleClick : (id) sender {
     NSLog(@"in double click");
     Mailbox *selectedItem = [_outlineViewLocal itemAtRow:[_outlineViewLocal selectedRow]];
     NSLog(@"selected item is: %@", [selectedItem name]);
     [tbDelegate moveTheMessage : selectedItem];
     
-}
+}*/
 
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item {

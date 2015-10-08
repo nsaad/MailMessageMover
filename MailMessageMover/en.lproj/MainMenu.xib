@@ -686,9 +686,6 @@
 Gw
 </string>
                         </buttonCell>
-                        <connections>
-                            <action selector="cancelButtonClicked:" target="1315" id="1374"/>
-                        </connections>
                     </button>
                     <button identifier="moveButton" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1177">
                         <rect key="frame" x="283" y="46" width="132" height="32"/>
@@ -700,9 +697,6 @@ Gw
 DQ
 </string>
                         </buttonCell>
-                        <connections>
-                            <action selector="moveMessageButtonClicked:" target="1315" id="1356"/>
-                        </connections>
                     </button>
                     <textField identifier="messageMetadataLabel" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1230">
                         <rect key="frame" x="35" y="422" width="6" height="17"/>
@@ -726,7 +720,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <outlet property="delegate" destination="1298" id="1341"/>
+                            <outlet property="delegate" destination="Ljf-WA-7fF" id="6Fc-1O-cCP"/>
                         </connections>
                     </textField>
                     <scrollView identifier="mailboxes" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1254">
@@ -793,9 +787,6 @@ DQ
                             <string key="keyEquivalent">g</string>
                             <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                         </buttonCell>
-                        <connections>
-                            <action selector="goToFolderButtonClicked:" target="1315" id="1355"/>
-                        </connections>
                     </button>
                     <textField identifier="errorLabel" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1361">
                         <rect key="frame" x="32" y="438" width="309" height="17"/>
@@ -1004,22 +995,18 @@ Clicking cancel will just exit from the application</string>
         <customObject id="1305" userLabel="OutlineViewController" customClass="OutlineViewController">
             <connections>
                 <outlet property="outlineViewLocal" destination="1255" id="1333"/>
-                <outlet property="tbDelegate" destination="1315" id="c3f-ZF-Ltl"/>
-            </connections>
-        </customObject>
-        <customObject id="1315" customClass="TestButtonDelegate">
-            <connections>
-                <outlet property="cancelButton" destination="1173" id="1373"/>
-                <outlet property="errorLabel" destination="1361" id="1367"/>
-                <outlet property="goToFolderButton" destination="1346" id="1353"/>
-                <outlet property="lbStatus" destination="1239" id="1340"/>
-                <outlet property="moveMessageButton" destination="1177" id="1354"/>
-                <outlet property="outlineView" destination="1255" id="1321"/>
             </connections>
         </customObject>
         <customObject id="1368" customClass="ViewTextFieldDelegate">
             <connections>
                 <outlet property="viewTextField" destination="1262" id="1369"/>
+            </connections>
+        </customObject>
+        <customObject id="Ljf-WA-7fF" userLabel="MailSubjectLabelDelegate" customClass="MailSubjectLabelDelegate">
+            <connections>
+                <outlet property="errorLabel" destination="1361" id="CnX-OD-c4v"/>
+                <outlet property="lbStatus" destination="1239" id="Ptp-Ps-OFF"/>
+                <outlet property="moveButton" destination="1177" id="UEl-Or-9Uv"/>
             </connections>
         </customObject>
         <userDefaultsController representsSharedInstance="YES" id="1201"/>
