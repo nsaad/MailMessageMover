@@ -134,7 +134,7 @@ static int TextFieldKVOContext = 0;
 
 
 - (void) awakeFromNib {
-    NSLog(@"in awake from nib");
+    //NSLog(@"in awake from nib");
     
     myEngine = [MailEngine sharedInstance];
     NSString *message = [myEngine updateMessageInfo];
@@ -144,7 +144,7 @@ static int TextFieldKVOContext = 0;
     NSString *messageCount = [myEngine updateMessageCount];
     
     if ([messageCount length] != 0) {
-        NSLog(@"strcmp(messageCount, 1): %d", [messageCount isEqualToString:@"1"]);
+        //NSLog(@"strcmp(messageCount, 1): %d", [messageCount isEqualToString:@"1"]);
         if ([messageCount isEqualToString:@"1"]) {
             messageCount = [messageCount stringByAppendingString:@" email"];
         } else {

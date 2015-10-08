@@ -337,7 +337,7 @@ static MailEngine *_sharedInstance;
     if (script != nil) {
         NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
         NSString *scriptReturn = [result stringValue];
-        //NSLog(@"Found utxt string: %@",scriptReturn);
+        NSLog(@"updateMessageInfo script return: %@",scriptReturn);
         
         if (scriptReturn == nil)
             return @"N/A";
@@ -349,7 +349,6 @@ static MailEngine *_sharedInstance;
 }
 
 - (NSString *) updateMessageCount {
-    NSLog(@"In MessageCount");
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"countSelectedMessages" ofType:@"scpt"];
     NSAppleScript *script = [[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
@@ -357,7 +356,7 @@ static MailEngine *_sharedInstance;
     if (script != nil) {
         NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
         NSString *scriptReturn = [result stringValue];
-        //NSLog(@"Found utxt string: %@",scriptReturn);
+        //NSLog(@"Counted messages: %@",scriptReturn);
         
         if (scriptReturn == nil)
             return @"N/A";
