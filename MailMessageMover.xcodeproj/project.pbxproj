@@ -25,7 +25,8 @@
 		93E61D0517C4E0DF00683689 /* Mailbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0417C4E0DF00683689 /* Mailbox.m */; };
 		93E61D0817C4E28A00683689 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0717C4E28A00683689 /* OutlineViewController.m */; };
 		93E61D0B17C5008900683689 /* MailEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0A17C5008900683689 /* MailEngine.m */; };
-		93E61D0E17C50BEF00683689 /* TestButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0D17C50BEF00683689 /* TestButtonDelegate.m */; };
+		B903B0351BC699AE00EA5404 /* MailCountLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B903B0341BC699AE00EA5404 /* MailCountLabelDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		B98BA7011BC6858C00B009E6 /* MailSubjectLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B98BA7001BC6858C00B009E6 /* MailSubjectLabelDelegate.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,8 +60,10 @@
 		93E61D0717C4E28A00683689 /* OutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewController.m; sourceTree = "<group>"; };
 		93E61D0917C5008900683689 /* MailEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailEngine.h; sourceTree = "<group>"; };
 		93E61D0A17C5008900683689 /* MailEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailEngine.m; sourceTree = "<group>"; };
-		93E61D0C17C50BEF00683689 /* TestButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestButtonDelegate.h; sourceTree = "<group>"; };
-		93E61D0D17C50BEF00683689 /* TestButtonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestButtonDelegate.m; sourceTree = "<group>"; };
+		B903B0331BC699AE00EA5404 /* MailCountLabelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailCountLabelDelegate.h; sourceTree = "<group>"; };
+		B903B0341BC699AE00EA5404 /* MailCountLabelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailCountLabelDelegate.m; sourceTree = "<group>"; };
+		B98BA6FF1BC6858C00B009E6 /* MailSubjectLabelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailSubjectLabelDelegate.h; sourceTree = "<group>"; };
+		B98BA7001BC6858C00B009E6 /* MailSubjectLabelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailSubjectLabelDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +121,12 @@
 		9363DBBF17B1262C009BDBEE /* MailMessageMover */ = {
 			isa = PBXGroup;
 			children = (
+				B98BA6FF1BC6858C00B009E6 /* MailSubjectLabelDelegate.h */,
+				B98BA7001BC6858C00B009E6 /* MailSubjectLabelDelegate.m */,
+				B903B0331BC699AE00EA5404 /* MailCountLabelDelegate.h */,
+				B903B0341BC699AE00EA5404 /* MailCountLabelDelegate.m */,
 				9363DBD817B42103009BDBEE /* TextFieldDelegate.h */,
 				9363DBD917B42103009BDBEE /* TextFieldDelegate.m */,
-				93E61D0C17C50BEF00683689 /* TestButtonDelegate.h */,
-				93E61D0D17C50BEF00683689 /* TestButtonDelegate.m */,
 				938E998C17D4E17C0003932F /* MailMessageMoverAppDelegate.h */,
 				938E998D17D4E17C0003932F /* MailMessageMoverAppDelegate.m */,
 				9363DBCD17B1262C009BDBEE /* MainMenu.xib */,
@@ -229,8 +234,9 @@
 				9363DBDA17B42103009BDBEE /* TextFieldDelegate.m in Sources */,
 				93E61D0517C4E0DF00683689 /* Mailbox.m in Sources */,
 				93E61D0817C4E28A00683689 /* OutlineViewController.m in Sources */,
+				B903B0351BC699AE00EA5404 /* MailCountLabelDelegate.m in Sources */,
 				93E61D0B17C5008900683689 /* MailEngine.m in Sources */,
-				93E61D0E17C50BEF00683689 /* TestButtonDelegate.m in Sources */,
+				B98BA7011BC6858C00B009E6 /* MailSubjectLabelDelegate.m in Sources */,
 				938E998417D4D84C0003932F /* ViewTextFieldDelegate.m in Sources */,
 				938E998E17D4E17C0003932F /* MailMessageMoverAppDelegate.m in Sources */,
 			);

@@ -328,27 +328,6 @@ static MailEngine *_sharedInstance;
     }
 }
 
-- (NSString *) updateMessageCount {
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"countSelectedMessages" ofType:@"scpt"];
-    NSAppleScript *script = [[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
-    
-    if (script != nil) {
-        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-        NSString *scriptReturn = [result stringValue];
-        //NSLog(@"Counted messages: %@",scriptReturn);
-        
-        if (scriptReturn == nil)
-            return @"N/A";
-        else
-            return scriptReturn;
-    } else {
-        return @"N/A";
-    }
-}
-
-
-
 -(NSString*) saveFilePath{
     NSLog(@"In save file path method");
     

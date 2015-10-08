@@ -1009,6 +1009,11 @@ Clicking cancel will just exit from the application</string>
                 <outlet property="moveButton" destination="1177" id="UEl-Or-9Uv"/>
             </connections>
         </customObject>
+        <customObject id="DhP-Gy-D8D" userLabel="MailCountLabelDelegate" customClass="MailCountLabelDelegate">
+            <connections>
+                <outlet property="lbMessageCount" destination="P3U-bv-Keb" id="yQU-L6-9Ks"/>
+            </connections>
+        </customObject>
         <userDefaultsController representsSharedInstance="YES" id="1201"/>
     </objects>
 </document>

@@ -7,7 +7,6 @@
 //
 
 #import "MailSubjectLabelDelegate.h"
-#import "MailEngine.h"
 
 @implementation MailSubjectLabelDelegate
 

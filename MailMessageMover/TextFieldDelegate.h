@@ -13,10 +13,6 @@
 }
 
 @property (nonatomic, strong) IBOutlet NSTextField * userInput;
-@property (nonatomic, strong) IBOutlet NSTextField * lbStatus;
-@property (nonatomic, strong) IBOutlet NSTextField * lbMessageCount;
-@property (nonatomic, strong) IBOutlet NSTextField * errorLabel;
-@property (nonatomic, strong) IBOutlet NSButton * moveButton;
 @property (retain) IBOutlet NSOutlineView *outlineView;
 @property (retain) IBOutlet OutlineViewController *outlineViewDelegate;
 @property (retain) IBOutlet NSWindow* theWindow;

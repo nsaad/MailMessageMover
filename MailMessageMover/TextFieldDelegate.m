@@ -12,7 +12,7 @@
 
 @implementation TextFieldDelegate
 
-@synthesize lbStatus, lbMessageCount, outlineView, outlineViewDelegate, theWindow, userInput, errorLabel, moveButton;
+@synthesize outlineView, outlineViewDelegate, theWindow, userInput;
 
 MailEngine *myEngine;
 static int TextFieldKVOContext = 0;
@@ -136,23 +136,6 @@ static int TextFieldKVOContext = 0;
     //NSLog(@"in awake from nib");
     
     myEngine = [MailEngine sharedInstance];
-//    NSString *message = [myEngine updateMessageInfo];
-    //NSLog(@"updating label with message: %@", message);
-//    [lbStatus setStringValue:message];
-    
-    NSString *messageCount = [myEngine updateMessageCount];
-    
-    if ([messageCount length] != 0) {
-        //NSLog(@"strcmp(messageCount, 1): %d", [messageCount isEqualToString:@"1"]);
-        if ([messageCount isEqualToString:@"1"]) {
-            messageCount = [messageCount stringByAppendingString:@" email"];
-        } else {
-            messageCount = [messageCount stringByAppendingString:@" emails"];
-        }
-        [lbMessageCount setStringValue:messageCount];
-    } else {
-        [lbMessageCount setStringValue:@""];
-    }
     
     if (userInput) {
         [self.userInput addObserver:self
