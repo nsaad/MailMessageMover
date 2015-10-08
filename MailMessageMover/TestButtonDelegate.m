@@ -13,7 +13,7 @@
 
 @implementation TestButtonDelegate
 
-@synthesize outlineView, lbStatus, moveMessageButton, goToFolderButton, errorLabel, cancelButton;
+@synthesize outlineView, lbStatus, moveMessageButton, goToFolderButton, errorLabel;
 MailEngine *myEngine;
 BOOL isMoveButtonClicked;
 
@@ -92,22 +92,6 @@ BOOL isMoveButtonClicked;
     }
 }
 
--(void) focusMailAndQuit {
-    
-    NSString *scriptTemplate = @"Tell application \"Mail\" \
-    activate \
-    end tell";
-    
-    NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
-    
-    if (script != nil) {
-        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-        //NSLog(@"result = %@", result);
-    }
-    
-    [[NSApplication sharedApplication] terminate:nil];
-}
-
 - (IBAction)goToFolderButtonClicked:(id)sender {
     //NSLog(@"go to folder button clicked");
     
@@ -139,10 +123,6 @@ BOOL isMoveButtonClicked;
         
     }
 
-}
-
-- (IBAction) cancelButtonClicked:(id) sender {
-    [self focusMailAndQuit];
 }
 
 -(TestButtonDelegate *) init {

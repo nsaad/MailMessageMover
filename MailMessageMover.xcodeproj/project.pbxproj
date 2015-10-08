@@ -28,6 +28,7 @@
 		B903B0351BC699AE00EA5404 /* MailCountLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B903B0341BC699AE00EA5404 /* MailCountLabelDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B98BA7011BC6858C00B009E6 /* MailSubjectLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B98BA7001BC6858C00B009E6 /* MailSubjectLabelDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B9B4FCC11BC6AFCD004E9DEF /* TestButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC01BC6AFCD004E9DEF /* TestButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		B9B4FCC31BC6B146004E9DEF /* CancelButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC21BC6B146004E9DEF /* CancelButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,8 @@
 		B98BA7001BC6858C00B009E6 /* MailSubjectLabelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailSubjectLabelDelegate.m; sourceTree = "<group>"; };
 		B9B4FCBF1BC6AFCD004E9DEF /* TestButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestButtonDelegate.h; sourceTree = "<group>"; };
 		B9B4FCC01BC6AFCD004E9DEF /* TestButtonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestButtonDelegate.m; sourceTree = "<group>"; };
+		B9B4FCC21BC6B146004E9DEF /* CancelButtonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancelButtonDelegate.m; sourceTree = "<group>"; };
+		B9B4FCC41BC6B156004E9DEF /* CancelButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CancelButtonDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				9363DBD917B42103009BDBEE /* TextFieldDelegate.m */,
 				B9B4FCBF1BC6AFCD004E9DEF /* TestButtonDelegate.h */,
 				B9B4FCC01BC6AFCD004E9DEF /* TestButtonDelegate.m */,
+				B9B4FCC41BC6B156004E9DEF /* CancelButtonDelegate.h */,
+				B9B4FCC21BC6B146004E9DEF /* CancelButtonDelegate.m */,
 				938E998C17D4E17C0003932F /* MailMessageMoverAppDelegate.h */,
 				938E998D17D4E17C0003932F /* MailMessageMoverAppDelegate.m */,
 				9363DBCD17B1262C009BDBEE /* MainMenu.xib */,
@@ -244,6 +249,7 @@
 				93E61D0B17C5008900683689 /* MailEngine.m in Sources */,
 				B98BA7011BC6858C00B009E6 /* MailSubjectLabelDelegate.m in Sources */,
 				938E998417D4D84C0003932F /* ViewTextFieldDelegate.m in Sources */,
+				B9B4FCC31BC6B146004E9DEF /* CancelButtonDelegate.m in Sources */,
 				938E998E17D4E17C0003932F /* MailMessageMoverAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

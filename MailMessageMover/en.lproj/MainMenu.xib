@@ -686,6 +686,9 @@
 Gw
 </string>
                         </buttonCell>
+                        <connections>
+                            <action selector="cancelButtonClicked:" target="TmA-vd-L3B" id="udh-YW-bGj"/>
+                        </connections>
                     </button>
                     <button identifier="moveButton" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1177">
                         <rect key="frame" x="283" y="46" width="132" height="32"/>
@@ -1012,6 +1015,12 @@ Clicking cancel will just exit from the application</string>
         <customObject id="DhP-Gy-D8D" userLabel="MailCountLabelDelegate" customClass="MailCountLabelDelegate">
             <connections>
                 <outlet property="lbMessageCount" destination="P3U-bv-Keb" id="yQU-L6-9Ks"/>
+            </connections>
+        </customObject>
+        <customObject id="Ets-Oj-J7u" userLabel="MoveButtonDelegate" customClass="TestButtonDelegate"/>
+        <customObject id="TmA-vd-L3B" userLabel="CancelButtonDelegate" customClass="CancelButtonDelegate">
+            <connections>
+                <outlet property="cancelButton" destination="1173" id="XSH-3I-h3g"/>
             </connections>
         </customObject>
         <userDefaultsController representsSharedInstance="YES" id="1201"/>
