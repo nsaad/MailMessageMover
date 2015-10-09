@@ -29,6 +29,8 @@
 		B98BA7011BC6858C00B009E6 /* MailSubjectLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B98BA7001BC6858C00B009E6 /* MailSubjectLabelDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B9B4FCC11BC6AFCD004E9DEF /* TestButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC01BC6AFCD004E9DEF /* TestButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B9B4FCC31BC6B146004E9DEF /* CancelButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC21BC6B146004E9DEF /* CancelButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		B9B4FCC61BC6CB88004E9DEF /* GoToFolderButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC51BC6CB88004E9DEF /* GoToFolderButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		B9B4FCCA1BC6D02D004E9DEF /* ButtonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC91BC6D02D004E9DEF /* ButtonUtil.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,10 @@
 		B9B4FCC01BC6AFCD004E9DEF /* TestButtonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestButtonDelegate.m; sourceTree = "<group>"; };
 		B9B4FCC21BC6B146004E9DEF /* CancelButtonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancelButtonDelegate.m; sourceTree = "<group>"; };
 		B9B4FCC41BC6B156004E9DEF /* CancelButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CancelButtonDelegate.h; sourceTree = "<group>"; };
+		B9B4FCC51BC6CB88004E9DEF /* GoToFolderButtonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoToFolderButtonDelegate.m; sourceTree = "<group>"; };
+		B9B4FCC71BC6CB92004E9DEF /* GoToFolderButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoToFolderButtonDelegate.h; sourceTree = "<group>"; };
+		B9B4FCC81BC6D01C004E9DEF /* ButtonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonUtil.h; sourceTree = "<group>"; };
+		B9B4FCC91BC6D02D004E9DEF /* ButtonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,10 @@
 				9363DBD917B42103009BDBEE /* TextFieldDelegate.m */,
 				B9B4FCBF1BC6AFCD004E9DEF /* TestButtonDelegate.h */,
 				B9B4FCC01BC6AFCD004E9DEF /* TestButtonDelegate.m */,
+				B9B4FCC81BC6D01C004E9DEF /* ButtonUtil.h */,
+				B9B4FCC91BC6D02D004E9DEF /* ButtonUtil.m */,
+				B9B4FCC71BC6CB92004E9DEF /* GoToFolderButtonDelegate.h */,
+				B9B4FCC51BC6CB88004E9DEF /* GoToFolderButtonDelegate.m */,
 				B9B4FCC41BC6B156004E9DEF /* CancelButtonDelegate.h */,
 				B9B4FCC21BC6B146004E9DEF /* CancelButtonDelegate.m */,
 				938E998C17D4E17C0003932F /* MailMessageMoverAppDelegate.h */,
@@ -241,11 +251,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9363DBC617B1262C009BDBEE /* main.m in Sources */,
+				B9B4FCC61BC6CB88004E9DEF /* GoToFolderButtonDelegate.m in Sources */,
 				9363DBDA17B42103009BDBEE /* TextFieldDelegate.m in Sources */,
 				B9B4FCC11BC6AFCD004E9DEF /* TestButtonDelegate.m in Sources */,
 				93E61D0517C4E0DF00683689 /* Mailbox.m in Sources */,
 				93E61D0817C4E28A00683689 /* OutlineViewController.m in Sources */,
 				B903B0351BC699AE00EA5404 /* MailCountLabelDelegate.m in Sources */,
+				B9B4FCCA1BC6D02D004E9DEF /* ButtonUtil.m in Sources */,
 				93E61D0B17C5008900683689 /* MailEngine.m in Sources */,
 				B98BA7011BC6858C00B009E6 /* MailSubjectLabelDelegate.m in Sources */,
 				938E998417D4D84C0003932F /* ViewTextFieldDelegate.m in Sources */,

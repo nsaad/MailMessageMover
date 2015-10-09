@@ -7,29 +7,14 @@
 //
 
 #import "CancelButtonDelegate.h"
+#import "ButtonUtil.h"
 
 @implementation CancelButtonDelegate
 
 @synthesize cancelButton;
 
--(void) focusMailAndQuit {
-    
-    NSString *scriptTemplate = @"Tell application \"Mail\" \
-    activate \
-    end tell";
-    
-    NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
-    
-    if (script != nil) {
-        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-        //NSLog(@"result = %@", result);
-    }
-    
-    [[NSApplication sharedApplication] terminate:nil];
-}
-
 - (IBAction) cancelButtonClicked:(id) sender {
-    [self focusMailAndQuit];
+    [ButtonUtil focusMailAndQuit];
 }
 
 @end

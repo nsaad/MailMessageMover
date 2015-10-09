@@ -15,10 +15,8 @@
 @property (nonatomic, strong) IBOutlet NSTextField * lbStatus;
 @property (nonatomic, strong) IBOutlet NSTextField * errorLabel;
 @property (nonatomic, strong) IBOutlet NSButton * moveMessageButton;
-@property (nonatomic, strong) IBOutlet NSButton * goToFolderButton;
 
 - (IBAction) moveMessageButtonClicked:(id)sender;
 - (void) moveTheMessage : (Mailbox *) selectedItem;
-- (IBAction) goToFolderButtonClicked:(id)sender;
 
 @end

@@ -13,7 +13,7 @@
 
 @implementation TestButtonDelegate
 
-@synthesize outlineView, lbStatus, moveMessageButton, goToFolderButton, errorLabel;
+@synthesize outlineView, lbStatus, moveMessageButton, errorLabel;
 MailEngine *myEngine;
 BOOL isMoveButtonClicked;
 
@@ -90,39 +90,6 @@ BOOL isMoveButtonClicked;
     } else {
         return true;
     }
-}
-
-- (IBAction)goToFolderButtonClicked:(id)sender {
-    //NSLog(@"go to folder button clicked");
-    
-    Mailbox *selectedItem = [outlineView itemAtRow:[outlineView selectedRow]];
-    //NSLog(@"Selected item in outline view is: %@", selectedItem.name);
-    
-    BOOL *selected = [self checkIfItemSelected:selectedItem];
-    
-    if (selected) {
-    
-        NSString* scriptTemplate = [NSString stringWithFormat:@" \
-    tell application \"Mail\" \n \
-    \n \
-    set boxToGoTo to get the mailbox \"%@\" of account \"%@\" \n \
-    set selected mailboxes of the front message viewer to boxToGoTo \n \
-    \n \
-    end tell", selectedItem.fullPath, selectedItem.accountString];
-        //NSLog(@"Calling script as follows: %@", scriptTemplate);
-    
-        NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
-    
-        if (script != nil) {
-            NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-            //NSLog(@"result = %@", result);
-        }
-        
-        [self writeArray:selectedItem];
-        [self focusMailAndQuit];
-        
-    }
-
 }
 
 -(TestButtonDelegate *) init {

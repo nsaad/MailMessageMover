@@ -790,6 +790,9 @@ DQ
                             <string key="keyEquivalent">g</string>
                             <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="goToFolderButtonClicked:" target="jmb-D2-aFF" id="XBj-j2-RIe"/>
+                        </connections>
                     </button>
                     <textField identifier="errorLabel" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1361">
                         <rect key="frame" x="32" y="438" width="309" height="17"/>
@@ -1021,6 +1024,12 @@ Clicking cancel will just exit from the application</string>
         <customObject id="TmA-vd-L3B" userLabel="CancelButtonDelegate" customClass="CancelButtonDelegate">
             <connections>
                 <outlet property="cancelButton" destination="1173" id="XSH-3I-h3g"/>
+            </connections>
+        </customObject>
+        <customObject id="jmb-D2-aFF" userLabel="GoToFolderButtonDelegate" customClass="GoToFolderButtonDelegate">
+            <connections>
+                <outlet property="goToFolderButton" destination="1346" id="Mdy-iF-5Ab"/>
+                <outlet property="outlineView" destination="1255" id="chE-MS-pT8"/>
             </connections>
         </customObject>
         <userDefaultsController representsSharedInstance="YES" id="1201"/>
