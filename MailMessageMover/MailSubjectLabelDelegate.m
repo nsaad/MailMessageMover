@@ -36,7 +36,7 @@
 
 //Calls an AppleScript to get the required details
 - (NSString *) updateMessageInfo {
-    NSLog(@"In updateMessageInfo");
+    //NSLog(@"In updateMessageInfo");
     
     //Get the path of the AppleScript to run
     NSString *path = [[NSBundle mainBundle] pathForResource:@"getMailMessageInfo" ofType:@"scpt"];
