@@ -13,6 +13,6 @@
 
 + (BOOL) checkIfItemSelected : (Mailbox*) item;
 + (void) writeArray : (Mailbox *) selectedItem;
-+(void) focusMailAndQuit;
++ (void) focusMailAndQuit;
 
 @end
