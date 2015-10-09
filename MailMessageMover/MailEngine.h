@@ -35,8 +35,6 @@
 - (void) buildInitialSetofData;
 - (void) createAllMailboxes : (NSAppleEventDescriptor *) result;
 - (NSInteger) findMailboxesWithText : (NSString *) text;
-- (NSString *) updateMessageInfo;
-- (NSString *) updateMessageCount;
 
 - (NSString *) saveFilePath;
 - (NSInteger) getCountOfVisible;

@@ -328,8 +328,9 @@ static MailEngine *_sharedInstance;
     }
 }
 
+//Provides the path to the location of the plist file used to store the last searched for folder
 -(NSString*) saveFilePath{
-    NSLog(@"In save file path method");
+    //NSLog(@"In save file path method");
     
     NSString* path = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/lastSearch.plist"];
     return path;
