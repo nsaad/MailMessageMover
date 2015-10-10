@@ -10,6 +10,7 @@
 #import "OutlineViewController.h"
 #import "MailEngine.h"
 #import "Mailbox.h"
+#import "ButtonUtil.h"
 
 @implementation TestButtonDelegate
 
@@ -23,7 +24,7 @@ BOOL isMoveButtonClicked;
     Mailbox *selectedItem = [outlineView itemAtRow:[outlineView selectedRow]];
     //NSLog(@"Selected item in outline view is: %@", selectedItem.name);
     
-    BOOL *selected = [self checkIfItemSelected:selectedItem];
+    BOOL *selected = [ButtonUtil checkIfItemSelected:selectedItem];
     
     if (selected) {
         [errorLabel setStringValue:@""];
@@ -65,23 +66,8 @@ BOOL isMoveButtonClicked;
         //NSLog(@"result = %@", result);
     }
     
-    [self writeArray:selectedItem];
-    [self focusMailAndQuit];
-}
-
--(void) writeArray : (Mailbox *) selectedItem {
-    NSMutableArray *myArray = [[NSMutableArray alloc] init];
-    [myArray addObject:selectedItem.name];
-    
-    NSLog(@"in write Array: %@", myArray);
-        
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:myArray];
-    NSString *path = [myEngine saveFilePath];
-    
-    NSLog(@"Path is %@", path);
-    [data writeToFile:path atomically:YES error:nil];
-    
-    [myArray release];
+    [ButtonUtil writeArray:selectedItem];
+    [ButtonUtil focusMailAndQuit];
 }
 
 -(BOOL) checkIfItemSelected : (Mailbox*) item {
