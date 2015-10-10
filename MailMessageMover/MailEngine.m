@@ -188,7 +188,7 @@ static MailEngine *_sharedInstance;
     if ([text isEqualToString:@""]) {
         //NSLog(@"Text is empty, so setting to visible");
         m.visible = true;
-    } else if ([m.fullPath rangeOfString:text options:NSCaseInsensitiveSearch].location != NSNotFound && [m.fullPath rangeOfString:text options:NSCaseInsensitiveSearch].location != NULL) {
+    } else if ([m.name rangeOfString:text options:NSCaseInsensitiveSearch].location != NSNotFound) {
         countOfMatched++;
         //NSLog(@"Found text %@ in %@ -- count of matched %lu", text, m.fullPath, countOfMatched);
         m.visible = true;
@@ -199,7 +199,7 @@ static MailEngine *_sharedInstance;
     //Recurse over this nodes children to see if they have any visible children
     NSArray *arr = m.children;
     BOOL anyChildVisible = false;
-    //NSLog(@"m.name has %@ children %lu", m.name, [m.children count]);
+    
     for (Mailbox *child in arr) {
         if ([self updateNodeAndChildrenVisibility : child : text]) {
             anyChildVisible = true;
@@ -214,7 +214,8 @@ static MailEngine *_sharedInstance;
     if (m.visible) {
         countOfVisible++;
     }
-    
+    //NSLog(@"\nHow many children does [%@] have? %lu\nDid %@ have visible children? %hhd\nSo [%@] has visibility: --- %hhd ---", m.name, [m.children count], m.name, anyChildVisible, m.name, m.visible);
+
     return m.visible;
     
 }
