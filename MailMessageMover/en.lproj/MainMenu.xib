@@ -1037,7 +1037,6 @@ Clicking cancel will just exit from the application</string>
                 <outlet property="outlineView" destination="1255" id="chE-MS-pT8"/>
             </connections>
         </customObject>
-        <customObject id="OtM-lG-PDt" customClass="WindowController"/>
         <userDefaultsController representsSharedInstance="YES" id="1201"/>
     </objects>
 </document>
