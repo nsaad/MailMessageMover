@@ -148,7 +148,7 @@ MailEngine *myEngine;
 - (void) awakeFromNib {
     
     [_outlineViewLocal setDoubleAction:@selector(onDoubleClick:)];
-    NSLog(@"OutlineViewController awakeFromNib");
+    //NSLog(@"OutlineViewController awakeFromNib");
 }
 
 /*
@@ -200,7 +200,7 @@ MailEngine *myEngine;
         [_outlineViewLocal selectRowIndexes:indexSet byExtendingSelection:NO];
         [_outlineViewLocal scrollRowToVisible:rowToSelect];
     } else {
-        NSLog(@"In refresh, more then one match");
+        NSLog(@"In refresh, either no match or more than one match");
     }
 }
 

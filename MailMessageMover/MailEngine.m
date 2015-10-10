@@ -83,7 +83,7 @@ static MailEngine *_sharedInstance;
 
 -(void) createAllMailboxes : (NSAppleEventDescriptor *) result {
     NSInteger num = [result numberOfItems];
-    //NSLog(@"There are %ld items in the list.", num);
+    NSLog(@"There are %ld items in the list.", num);
     
     for (NSInteger idx = 1; idx <= num; ++idx) {
         NSAppleEventDescriptor *item = [result descriptorAtIndex:idx];
@@ -117,32 +117,20 @@ static MailEngine *_sharedInstance;
                 
                 //extract after / and set as name
                 name = [path substringWithRange: NSMakeRange (match.location + 1, [path length] - match.location - 1)];
-                
                 //NSLog(@"Name is: %@", name);
                 
-                //extract first / and set as parent
+                //Setting parent path to the full path of the parent to handle duplicates.
+                //This is also used by connectParents method
                 parentPath = [path substringWithRange: NSMakeRange (0, match.location)];
+                parentPath = [NSString stringWithFormat: @"%@/%@", account, parentPath];
                 //NSLog(@"Parent Path is %@", parentPath);
-                
-                //check for another / and get direct parent if exists
-                match = [parentPath rangeOfString: @"/" options:NSBackwardsSearch];
-                if (match.location == NSNotFound) {
-                    //NSLog(@"No other parents in the path, already found exact parent");
-                } else {
-                    //NSLog(@"Another / is found, getting the direct parent of this mailbox");
-                    parentPath = [parentPath substringFromIndex:match.location + 1];
-                    //NSLog(@"Final parent Path is %@", parentPath);
-                }
                 
             }
             
-            //Create a mailbox
-            Mailbox *m = [[ Mailbox alloc] initWithName:name];
-            m.parentString = parentPath;
-            m.accountString = account;
-            m.fullPath = path;
+            //Create a mailbox with full path as Account/path to have a fully unique path to use for the dictionary
+            Mailbox *m = [[ Mailbox alloc] initWithName:name : parentPath : account : [NSString stringWithFormat: @"%@/%@", account, path]];
             
-            //NSLog(@"Created mailbox: %@ under %@ in %@ [key: %@]" , name, parentPath, account, name);
+            //NSLog(@"Created mailbox: [%@] with parent [%@] in account [%@] using key [%@]" , name, parentPath, account, [NSString stringWithFormat: @"%@/%@", account, path]);
             
             [self addUniqueMailboxToDictionary: mailboxDictionary : m];
             
@@ -162,7 +150,7 @@ static MailEngine *_sharedInstance;
     for (Mailbox *m in allRoots) {
         [self sortNodeChildren: m];
     }
-
+    
 }
 
 -(void) sortNodeChildren : (Mailbox *) m {
@@ -178,88 +166,69 @@ static MailEngine *_sharedInstance;
     }
 }
 
+//Recursively look through the mailboxes for a mailbox with TEXT in the name
 - (NSInteger) findMailboxesWithText: (NSString *) text {
     
     countOfMatched = 0;
     countOfVisible = 0;
     
     for (Mailbox *m in allRoots) {
-        //NSLog(@"IN FIND MAILBOXES: name of mailbox: %@", m.name);
         
         [self updateNodeAndChildrenVisibility: m : text];
     }
     
     return countOfMatched;
     
-    //update myMailboxes to have 
 }
 
+//Sets a node to visible if it contains TEXT or if it has a child that contains TEXT
 - (BOOL) updateNodeAndChildrenVisibility : (Mailbox *) m : (NSString *) text {
+
+    //Check for TEXT in this node and set it's visibility accordingly
+    if ([text isEqualToString:@""]) {
+        //NSLog(@"Text is empty, so setting to visible");
+        m.visible = true;
+    } else if ([m.fullPath rangeOfString:text options:NSCaseInsensitiveSearch].location != NSNotFound && [m.fullPath rangeOfString:text options:NSCaseInsensitiveSearch].location != NULL) {
+        countOfMatched++;
+        //NSLog(@"Found text %@ in %@ -- count of matched %lu", text, m.fullPath, countOfMatched);
+        m.visible = true;
+    } else {
+        m.visible = false;
+    }
     
+    //Recurse over this nodes children to see if they have any visible children
     NSArray *arr = m.children;
     BOOL anyChildVisible = false;
+    //NSLog(@"m.name has %@ children %lu", m.name, [m.children count]);
     for (Mailbox *child in arr) {
         if ([self updateNodeAndChildrenVisibility : child : text]) {
             anyChildVisible = true;
         }
     }
-    //NSLog(@" anyChildVisible: %d", anyChildVisible);
     
-    if (!anyChildVisible) {
-        if ([text isEqualToString:@""]) {
-            //NSLog(@"Text is empty, so setting to visible");
-            m.visible = true;
-        } else if ([m.name rangeOfString:text options:NSCaseInsensitiveSearch].location != NSNotFound) {
-            countOfMatched++;
-            NSLog(@"Found text %@ in %@ -- count of matched %lu", text, m.name, countOfMatched);
-            m.visible = true;
-        } else {
-            m.visible = false;
-        }
-    //If a child is visible, show this box regardless of it matching text
-    } else {
+    //If it has visible children, set this node to visible regardless
+    if (anyChildVisible) {
         m.visible = true;
     }
     
-    //NSLog(@"Box %@ is %d", m.name, m.visible);
     if (m.visible) {
         countOfVisible++;
     }
+    
     return m.visible;
+    
 }
 
+//Add new mailboxes into the dictonary using the full path of the mailbox as the unique identifier to allow for duplicate folder names
 -(void) addUniqueMailboxToDictionary : (NSMutableDictionary *) dict : (Mailbox *) m {
     
     //Add it to the NSDictionary.
-    if ([dict objectForKey:m.name]) {
+    //NSLog(@"Adding mailbox %@ with full path %@ to dictionary", m.name, m.fullPath);
+    if ([dict objectForKey:m.fullPath]) {
         m.duplicateName = true;
-        NSLog(@"WARNING: There's already an object set with key \"%@\"! Trying with key %@_%@", m.name, m.parentString, m.name);
-        
-        NSArray *stringToJoin = [[NSArray alloc] initWithObjects:m.parentString, m.name, nil];
-        NSString *compoundKey = [stringToJoin componentsJoinedByString:@"_"];
-        if ([mailboxDictionary objectForKey:compoundKey]) {
-            NSLog(@"MAJOR WARNING: Even with compound key there's duplication - fix this in Mail for %@ in %@ in %@", m.name, m.parentString, m.account);
-        } else {
-            [mailboxDictionary setObject:m forKey:compoundKey ];
-            
-            Mailbox *tempMailbox = [mailboxDictionary objectForKey:m.name];
-            tempMailbox.duplicateName = true;
-            
-            NSArray *stringToJoin = [[NSArray alloc] initWithObjects:tempMailbox.parentString, tempMailbox.name, nil];
-            NSString *compoundKey = [stringToJoin componentsJoinedByString:@"_"];
-            
-            if ([mailboxDictionary objectForKey:compoundKey]) {
-                NSLog(@"MAJOR WARNING: The temp mailbox being modifiy has compound key duplication - fix this in Mail for %@ in %@ in %@", m.name, m.parentString, m.accountString);
-            } else {
-                //NSLog(@"Successfully updated to new key [%@] for mailbox %@ under %@ in %@", compoundKey, tempMailbox.name, tempMailbox.parentString, tempMailbox.accountString);
-                [mailboxDictionary setObject:tempMailbox forKey:compoundKey ];
-                [mailboxDictionary removeObjectForKey:tempMailbox.name];
-            }
-            
-        }
-        
+        NSLog(@"WARNING: There's already an object set with key \"%@\"! Code needs revision", m.fullPath);
     } else {
-        [mailboxDictionary setObject:m forKey:m.name ];
+        [mailboxDictionary setObject:m forKey:m.fullPath ];
     }
 }
 
@@ -300,29 +269,32 @@ static MailEngine *_sharedInstance;
 -(void) connectAllParents {
     //NSLog(@"In connect relatives");
     
+    //Iterate over all the mailboxes that exist in the dictionary
     for(id key in mailboxDictionary) {
-        Mailbox *box = [mailboxDictionary objectForKey:key];
-//        NSLog(@"first key: %@", key);
-        NSString *parentString = box.parentString;
-//                NSLog(@"first parent: %@", parentString);
         
+        //Get a mailbox
+        Mailbox *box = [mailboxDictionary objectForKey:key];
+        NSLog(@"first key: %@", key);
+        
+        //Get the mailbox's parent
+        NSString *parentString = box.parentString;
+        NSLog(@"first parent: %@", parentString);
+        
+        //As long as there is a parentString
         if (parentString != nil) {
+            
+            //Look for the parent mailbox in the dictionary using the parentString as the key
             Mailbox *parent = [mailboxDictionary objectForKey:parentString];
-//            NSLog(@"got parent object: %@", parent);
-            if (parent == nil) {
+            NSLog(@"got parent object: %@", parent.name);
+            
+            //If we find the parent mailbox object
+            if (parent != nil) {
                 
-                NSArray *stringToJoin = [[NSArray alloc] initWithObjects:box.accountString, box.parentString, nil];
-                NSString *compoundKey = [stringToJoin componentsJoinedByString:@"_"];
-//                NSLog(@"Trying with compound key %@", compoundKey);
-
-                parent = [mailboxDictionary objectForKey:compoundKey];
-                if (parent != nil) {
-                    box.parent = parent;
-                    [parent addChild:box];
-                }
-            } else {
+                //Create the two way connection between the parent and the child
                 box.parent = parent;
                 [parent addChild:box];
+            } else {
+                NSLog(@"WARNING: We should always find the parent in the dictionary, code review required.");
             }
         }
     }
@@ -338,35 +310,6 @@ static MailEngine *_sharedInstance;
 
 - (NSInteger) getCountOfVisible {
     return countOfVisible;
-}
-
--(void) createFakeData {
-
-        myMailboxes = [[NSMutableArray alloc] init];
-        
-        Mailbox *account1 = [[Mailbox alloc] initWithName:@"Red Hat"];
-        Mailbox *account2 = [[Mailbox alloc] initWithName:@"Gmail"];
-        
-        [account1 addChild:[[Mailbox alloc] initWithName:@"Lists"]];
-        [account1 addChild:[[Mailbox alloc] initWithName:@"Departments"]];
-        
-        Mailbox *clients = [[Mailbox alloc] initWithName:@"Clients"];
-        [account1 addChild:clients];
-        
-        [clients addChild:[[Mailbox alloc] initWithName:@"Tesco Bank"]];
-        [clients addChild:[[Mailbox alloc] initWithName:@"British Airways"]];
-        [clients addChild:[[Mailbox alloc] initWithName:@"Vodafone"]];
-        
-        [account2 addChild:[[Mailbox alloc] initWithName:@"Family"]];
-        [account2 addChild:[[Mailbox alloc] initWithName:@"Friends"]];
-        [account2 addChild:[[Mailbox alloc] initWithName:@"Elisa"]];
-        [account2 addChild:[[Mailbox alloc] initWithName:@"British Airways"]];
-        
-        [myMailboxes addObject:account1];
-        [myMailboxes addObject:account2];
-    
-        //NSLog(@"my mailboxes count %ld", [myMailboxes count]);
-        //NSLog(@"created fake data");
 }
 
 @end

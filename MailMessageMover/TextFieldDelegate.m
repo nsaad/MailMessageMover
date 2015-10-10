@@ -84,7 +84,7 @@ static int TextFieldKVOContext = 0;
 }
 
 - (void) controlTextDidEndEditing : (NSNotification *) sender {
-    NSLog(@"in control text end");
+    //NSLog(@"in control text end");
     //TestButtonDelegate *tbd = [[TestButtonDelegate alloc] init];
     //[tbd moveMessageButtonClicked:sender];
     [self changeFocusToView];
@@ -102,7 +102,7 @@ static int TextFieldKVOContext = 0;
         [self expandOutlineViewOnChange : rowToSelect];
         
     } else {
-        NSLog(@"In refresh, more then one match");
+        NSLog(@"In refresh, no match or more than one match");
         [self expandOutlineViewOnChange : 2];
     }
     
@@ -123,7 +123,7 @@ static int TextFieldKVOContext = 0;
         NSLog(@"it isn't expanded");
         [outlineView expandItem:node expandChildren:YES];
     } else {
-        NSLog(@"it is expanded");
+        //NSLog(@"it is expanded");
     }
     
     //Make the appropriate selection
@@ -149,7 +149,7 @@ static int TextFieldKVOContext = 0;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    NSLog(@"in observe, object is %@", object);
+    //NSLog(@"in observe, object is %@", object);
     
     if (context != &TextFieldKVOContext) {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -158,7 +158,7 @@ static int TextFieldKVOContext = 0;
     
     if (object == self.userInput) {
         if ([keyPath isEqualToString:@"stringValue"]) {
-            NSLog(@"i'm aware the string got set: %@", [userInput stringValue]);
+            //NSLog(@"i'm aware the string got set: %@", [userInput stringValue]);
             [outlineViewDelegate refreshTheData:[userInput stringValue]];
             //[self changeFocusToView];
         }

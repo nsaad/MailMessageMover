@@ -23,6 +23,7 @@
 @property Boolean duplicateName;
 
 - (id) initWithName : (NSString *) name;
+- (id) initWithName : (NSString *) name_ : (NSString *) parentPath_ : (NSString *) account_ : (NSString *) path_;
 - (void) addChild : (Mailbox *) child;
 - (void) setParent : (Mailbox *) parent;
 @end

@@ -31,6 +31,23 @@
     return self;
 }
 
+- (id) initWithName : (NSString *) name_ : (NSString *) parentPath_ : (NSString *) account_ : (NSString *) path_ {
+    self = [super init];
+    if (self) {
+        _name = [name_ copy];
+        _children = [[ NSMutableArray alloc] init];
+        _parent = nil;
+        _parentString = [parentPath_ copy];
+        _fullPath = [path_ copy];
+        _account = nil;
+        _accountString = [account_ copy];
+        _visible = true; 
+        _duplicateName = false;
+    }
+    
+    return self;
+}
+
 - (void) addChild:(Mailbox *)child {
     [_children addObject:child];
 }

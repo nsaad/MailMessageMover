@@ -22,7 +22,7 @@ MailEngine *myEngine;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    NSLog(@"app launched");
+    //NSLog(@"app launched");
     
     myEngine = [MailEngine sharedInstance];
     

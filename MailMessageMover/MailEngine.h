@@ -31,7 +31,6 @@
 -(NSMutableArray *) getAllAccounts;
 -(NSMutableArray *) getMyMailboxes;
 
-- (void) createFakeData;
 - (void) buildInitialSetofData;
 - (void) createAllMailboxes : (NSAppleEventDescriptor *) result;
 - (NSInteger) findMailboxesWithText : (NSString *) text;
