@@ -18,7 +18,5 @@
 @property (retain) IBOutlet NSWindow* theWindow;
 
 - (IBAction) controlTextDidChange :(id) sender;
-- (void) awakeFromNib;
-- (void) changeFocusToView;
 
 @end

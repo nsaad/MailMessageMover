@@ -83,7 +83,7 @@ static MailEngine *_sharedInstance;
 
 -(void) createAllMailboxes : (NSAppleEventDescriptor *) result {
     NSInteger num = [result numberOfItems];
-    NSLog(@"There are %ld items in the list.", num);
+    //NSLog(@"There are %ld items in the list.", num);
     
     for (NSInteger idx = 1; idx <= num; ++idx) {
         NSAppleEventDescriptor *item = [result descriptorAtIndex:idx];
@@ -274,18 +274,18 @@ static MailEngine *_sharedInstance;
         
         //Get a mailbox
         Mailbox *box = [mailboxDictionary objectForKey:key];
-        NSLog(@"first key: %@", key);
+        //NSLog(@"first key: %@", key);
         
         //Get the mailbox's parent
         NSString *parentString = box.parentString;
-        NSLog(@"first parent: %@", parentString);
+        //NSLog(@"first parent: %@", parentString);
         
         //As long as there is a parentString
         if (parentString != nil) {
             
             //Look for the parent mailbox in the dictionary using the parentString as the key
             Mailbox *parent = [mailboxDictionary objectForKey:parentString];
-            NSLog(@"got parent object: %@", parent.name);
+            //NSLog(@"got parent object: %@", parent.name);
             
             //If we find the parent mailbox object
             if (parent != nil) {
@@ -294,7 +294,7 @@ static MailEngine *_sharedInstance;
                 box.parent = parent;
                 [parent addChild:box];
             } else {
-                NSLog(@"WARNING: We should always find the parent in the dictionary, code review required.");
+                //NSLog(@"WARNING: We should always find the parent in the dictionary, code review required.");
             }
         }
     }

@@ -185,22 +185,23 @@ MailEngine *myEngine;
     
     NSInteger countOfMatched = [myEngine findMailboxesWithText:text];
 
+    //NSLog(@"num boxes in mymailboxes %lu", [myMailboxes count]);
     for (Mailbox *m in myMailboxes) {
         [self expandAllItems:m];
     }
     [self.outlineViewLocal reloadData];
     
     NSInteger exactMatch = 1;
-    NSLog(@"in refresh, countOfMatched: %lu", countOfMatched);
+    //NSLog(@"in refresh, countOfMatched: %lu", countOfMatched);
     if (countOfMatched == exactMatch) {
         NSInteger rowToSelect = [myEngine getCountOfVisible];
-        NSLog(@"Only one match - count of visible %lu", rowToSelect);
+        //NSLog(@"Only one match - count of visible %lu", rowToSelect);
         
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:(rowToSelect -1)];
         [_outlineViewLocal selectRowIndexes:indexSet byExtendingSelection:NO];
         [_outlineViewLocal scrollRowToVisible:rowToSelect];
     } else {
-        NSLog(@"In refresh, either no match or more than one match");
+        //NSLog(@"In refresh, either no match or more than one match");
     }
 }
 

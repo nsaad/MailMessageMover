@@ -14,7 +14,6 @@
 		9363DBCA17B1262C009BDBEE /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9363DBC817B1262C009BDBEE /* Credits.rtf */; };
 		9363DBCF17B1262C009BDBEE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9363DBCD17B1262C009BDBEE /* MainMenu.xib */; };
 		9363DBDA17B42103009BDBEE /* TextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9363DBD917B42103009BDBEE /* TextFieldDelegate.m */; };
-		938E998417D4D84C0003932F /* ViewTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E998317D4D84C0003932F /* ViewTextFieldDelegate.m */; };
 		938E998B17D4DED50003932F /* msgfiler.png in Resources */ = {isa = PBXBuildFile; fileRef = 938E998A17D4DED50003932F /* msgfiler.png */; };
 		938E998E17D4E17C0003932F /* MailMessageMoverAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E998D17D4E17C0003932F /* MailMessageMoverAppDelegate.m */; };
 		938E999217D628FC0003932F /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = 938E999117D628FC0003932F /* ToDo */; };
@@ -27,7 +26,7 @@
 		93E61D0B17C5008900683689 /* MailEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0A17C5008900683689 /* MailEngine.m */; };
 		B903B0351BC699AE00EA5404 /* MailCountLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B903B0341BC699AE00EA5404 /* MailCountLabelDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B98BA7011BC6858C00B009E6 /* MailSubjectLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B98BA7001BC6858C00B009E6 /* MailSubjectLabelDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		B9B4FCC11BC6AFCD004E9DEF /* TestButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC01BC6AFCD004E9DEF /* TestButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		B9B4FCC11BC6AFCD004E9DEF /* MoveMessageButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC01BC6AFCD004E9DEF /* MoveMessageButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B9B4FCC31BC6B146004E9DEF /* CancelButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC21BC6B146004E9DEF /* CancelButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B9B4FCC61BC6CB88004E9DEF /* GoToFolderButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC51BC6CB88004E9DEF /* GoToFolderButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B9B4FCCA1BC6D02D004E9DEF /* ButtonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC91BC6D02D004E9DEF /* ButtonUtil.m */; settings = {ASSET_TAGS = (); }; };
@@ -48,8 +47,6 @@
 		9363DBCE17B1262C009BDBEE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9363DBD817B42103009BDBEE /* TextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldDelegate.h; sourceTree = "<group>"; };
 		9363DBD917B42103009BDBEE /* TextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldDelegate.m; sourceTree = "<group>"; };
-		938E998217D4D84C0003932F /* ViewTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTextFieldDelegate.h; sourceTree = "<group>"; };
-		938E998317D4D84C0003932F /* ViewTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTextFieldDelegate.m; sourceTree = "<group>"; };
 		938E998A17D4DED50003932F /* msgfiler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgfiler.png; sourceTree = "<group>"; };
 		938E998C17D4E17C0003932F /* MailMessageMoverAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailMessageMoverAppDelegate.h; sourceTree = "<group>"; };
 		938E998D17D4E17C0003932F /* MailMessageMoverAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailMessageMoverAppDelegate.m; sourceTree = "<group>"; };
@@ -68,8 +65,8 @@
 		B903B0341BC699AE00EA5404 /* MailCountLabelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailCountLabelDelegate.m; sourceTree = "<group>"; };
 		B98BA6FF1BC6858C00B009E6 /* MailSubjectLabelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailSubjectLabelDelegate.h; sourceTree = "<group>"; };
 		B98BA7001BC6858C00B009E6 /* MailSubjectLabelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailSubjectLabelDelegate.m; sourceTree = "<group>"; };
-		B9B4FCBF1BC6AFCD004E9DEF /* TestButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestButtonDelegate.h; sourceTree = "<group>"; };
-		B9B4FCC01BC6AFCD004E9DEF /* TestButtonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestButtonDelegate.m; sourceTree = "<group>"; };
+		B9B4FCBF1BC6AFCD004E9DEF /* MoveMessageButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveMessageButtonDelegate.h; sourceTree = "<group>"; };
+		B9B4FCC01BC6AFCD004E9DEF /* MoveMessageButtonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveMessageButtonDelegate.m; sourceTree = "<group>"; };
 		B9B4FCC21BC6B146004E9DEF /* CancelButtonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancelButtonDelegate.m; sourceTree = "<group>"; };
 		B9B4FCC41BC6B156004E9DEF /* CancelButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CancelButtonDelegate.h; sourceTree = "<group>"; };
 		B9B4FCC51BC6CB88004E9DEF /* GoToFolderButtonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoToFolderButtonDelegate.m; sourceTree = "<group>"; };
@@ -139,8 +136,8 @@
 				B903B0341BC699AE00EA5404 /* MailCountLabelDelegate.m */,
 				9363DBD817B42103009BDBEE /* TextFieldDelegate.h */,
 				9363DBD917B42103009BDBEE /* TextFieldDelegate.m */,
-				B9B4FCBF1BC6AFCD004E9DEF /* TestButtonDelegate.h */,
-				B9B4FCC01BC6AFCD004E9DEF /* TestButtonDelegate.m */,
+				B9B4FCBF1BC6AFCD004E9DEF /* MoveMessageButtonDelegate.h */,
+				B9B4FCC01BC6AFCD004E9DEF /* MoveMessageButtonDelegate.m */,
 				B9B4FCC81BC6D01C004E9DEF /* ButtonUtil.h */,
 				B9B4FCC91BC6D02D004E9DEF /* ButtonUtil.m */,
 				B9B4FCC71BC6CB92004E9DEF /* GoToFolderButtonDelegate.h */,
@@ -156,8 +153,6 @@
 				93E61D0717C4E28A00683689 /* OutlineViewController.m */,
 				93E61D0917C5008900683689 /* MailEngine.h */,
 				93E61D0A17C5008900683689 /* MailEngine.m */,
-				938E998217D4D84C0003932F /* ViewTextFieldDelegate.h */,
-				938E998317D4D84C0003932F /* ViewTextFieldDelegate.m */,
 				9363DBC017B1262C009BDBEE /* Supporting Files */,
 			);
 			path = MailMessageMover;
@@ -253,14 +248,13 @@
 				9363DBC617B1262C009BDBEE /* main.m in Sources */,
 				B9B4FCC61BC6CB88004E9DEF /* GoToFolderButtonDelegate.m in Sources */,
 				9363DBDA17B42103009BDBEE /* TextFieldDelegate.m in Sources */,
-				B9B4FCC11BC6AFCD004E9DEF /* TestButtonDelegate.m in Sources */,
+				B9B4FCC11BC6AFCD004E9DEF /* MoveMessageButtonDelegate.m in Sources */,
 				93E61D0517C4E0DF00683689 /* Mailbox.m in Sources */,
 				93E61D0817C4E28A00683689 /* OutlineViewController.m in Sources */,
 				B903B0351BC699AE00EA5404 /* MailCountLabelDelegate.m in Sources */,
 				B9B4FCCA1BC6D02D004E9DEF /* ButtonUtil.m in Sources */,
 				93E61D0B17C5008900683689 /* MailEngine.m in Sources */,
 				B98BA7011BC6858C00B009E6 /* MailSubjectLabelDelegate.m in Sources */,
-				938E998417D4D84C0003932F /* ViewTextFieldDelegate.m in Sources */,
 				B9B4FCC31BC6B146004E9DEF /* CancelButtonDelegate.m in Sources */,
 				938E998E17D4E17C0003932F /* MailMessageMoverAppDelegate.m in Sources */,
 			);

@@ -18,12 +18,12 @@ MailEngine *myEngine;
     NSMutableArray *myArray = [[NSMutableArray alloc] init];
     [myArray addObject:selectedItem.name];
     
-    NSLog(@"in write Array: %@", myArray);
+    //NSLog(@"in write Array: %@", myArray);
         
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:myArray];
     NSString *path = [myEngine saveFilePath];
     
-    NSLog(@"Path is %@", path);
+    //NSLog(@"Path is %@", path);
     [data writeToFile:path atomically:YES error:nil];
     
     [myArray release];

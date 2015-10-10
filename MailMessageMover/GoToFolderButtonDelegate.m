@@ -24,15 +24,17 @@
 }
 
 - (IBAction) goToFolderButtonClicked:(id)sender {
-    NSLog(@"go to folder button clicked");
+    //NSLog(@"go to folder button clicked");
     
     Mailbox *selectedItem = [outlineView itemAtRow:[outlineView selectedRow]];
-    NSLog(@"Selected item in outline view is: %@", selectedItem.name);
+    //NSLog(@"Selected item in outline view is: %@", selectedItem.name);
     
     BOOL *selected = [ButtonUtil checkIfItemSelected:selectedItem];
     
     if (selected) {
         
+        NSRange match = [selectedItem.fullPath rangeOfString: @"/"];
+        NSString* pathWithoutAccount = [selectedItem.fullPath substringFromIndex:match.location + 1];
         //NSLog(@"mailbox: %@ and account: %@", selectedItem.fullPath, selectedItem.accountString);
         NSString* scriptTemplate = [NSString stringWithFormat:@" \
     tell application \"Mail\" \n \
@@ -41,7 +43,7 @@
     set selected mailboxes of the front message viewer to boxToGoTo \n \
     activate \n \
     \n \
-    end tell", selectedItem.fullPath, selectedItem.accountString];
+    end tell", pathWithoutAccount, selectedItem.accountString];
         //NSLog(@"Calling script as follows: %@", scriptTemplate);
     
         NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptTemplate];

@@ -63,7 +63,7 @@ MailEngine *myEngine;
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
-    NSLog(@"app terminating");
+    //NSLog(@"app terminating");
 }
 
 @end

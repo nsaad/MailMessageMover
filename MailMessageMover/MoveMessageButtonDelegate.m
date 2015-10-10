@@ -44,21 +44,25 @@ BOOL isMoveButtonClicked;
         }
     } else {
         [errorLabel setStringValue:@"Please select a folder from the list"];
-        NSLog(@"There's nothing selected, not progressing");
+        //NSLog(@"There's nothing selected, not progressing");
     }
 
 }
 
 - (void) moveTheMessage : (Mailbox *) selectedItem {
-    //NSLog(@"In moveTheMessage");
+    
+    //Check where the first / is in the full path and select the path component without the account name
+    NSRange match = [selectedItem.fullPath rangeOfString: @"/"];
+    NSString* pathWithoutAccount = [selectedItem.fullPath substringFromIndex:match.location + 1];
+
     NSString* scriptTemplate = [NSString stringWithFormat:@" \
                                 tell application \"Mail\" \n \
                                 set theMessages to the selected messages of message viewer 1 \n \
                                 \n \
                                 repeat with aMessage in theMessages \n \
-                                set mailbox of aMessage to mailbox \"%@\" of account \"%@\" \n \
+                                    set mailbox of aMessage to mailbox \"%@\" of account \"%@\" \n \
                                 end repeat \n \
-                                end tell", selectedItem.fullPath, selectedItem.accountString];
+                                end tell", pathWithoutAccount, selectedItem.accountString];
     
     NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
     

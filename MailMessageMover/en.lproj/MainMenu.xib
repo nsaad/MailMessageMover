@@ -1003,11 +1003,6 @@ Clicking cancel will just exit from the application</string>
                 <outlet property="outlineViewLocal" destination="1255" id="1333"/>
             </connections>
         </customObject>
-        <customObject id="1368" customClass="ViewTextFieldDelegate">
-            <connections>
-                <outlet property="viewTextField" destination="1262" id="1369"/>
-            </connections>
-        </customObject>
         <customObject id="Ljf-WA-7fF" userLabel="MailSubjectLabelDelegate" customClass="MailSubjectLabelDelegate">
             <connections>
                 <outlet property="errorLabel" destination="1361" id="CnX-OD-c4v"/>
