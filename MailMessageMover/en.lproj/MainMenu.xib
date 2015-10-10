@@ -704,6 +704,9 @@ Gw
 DQ
 </string>
                         </buttonCell>
+                        <connections>
+                            <action selector="moveMessageButtonClicked:" target="Ets-Oj-J7u" id="5yn-Yf-7F4"/>
+                        </connections>
                     </button>
                     <textField identifier="messageMetadataLabel" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1230">
                         <rect key="frame" x="21" y="427" width="6" height="17"/>
@@ -1017,7 +1020,12 @@ Clicking cancel will just exit from the application</string>
                 <outlet property="lbMessageCount" destination="P3U-bv-Keb" id="yQU-L6-9Ks"/>
             </connections>
         </customObject>
-        <customObject id="Ets-Oj-J7u" userLabel="MoveButtonDelegate" customClass="TestButtonDelegate"/>
+        <customObject id="Ets-Oj-J7u" userLabel="MoveButtonDelegate" customClass="MoveMessageButtonDelegate">
+            <connections>
+                <outlet property="errorLabel" destination="1361" id="e0W-T9-YYt"/>
+                <outlet property="outlineView" destination="1255" id="fM5-RE-eJs"/>
+            </connections>
+        </customObject>
         <customObject id="TmA-vd-L3B" userLabel="CancelButtonDelegate" customClass="CancelButtonDelegate">
             <connections>
                 <outlet property="cancelButton" destination="1173" id="XSH-3I-h3g"/>
