@@ -15,28 +15,15 @@
 
 MailEngine *myEngine;
 
+
 - (IBAction) quitApplication:(id)sender {
     [[NSApplication sharedApplication] terminate:nil];
 }
 
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
-    NSLog(@"should teminate, called?");
-    return YES;
-}
-
-//This doesn't work, it should be as follows, but that doesn't work either due to "Expected a type on UIApplication"
-//- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-//TODO: if I can figure this out, and have the call to [myEngine saveFilePath] happen here, it might happen later then the creation of the textfielddelegate
-
-//The current issue is that the loading order varies and sometimes the text is loaded before the delegate is ready to observe the change event.
-
-- (BOOL)willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSLog(@"app did finish launching");
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    // Insert code here to initialize your application
+    NSLog(@"app launched");
     
-    return YES;
-}
-
-- (void) awakeFromNib {
     myEngine = [MailEngine sharedInstance];
     
     NSString *path = [myEngine saveFilePath];
@@ -53,7 +40,7 @@ MailEngine *myEngine;
             NSString *savedName;
             for (NSInteger i = 0; i < [myArray count]; ++i) {
                 savedName = [myArray objectAtIndex:i];
-                NSLog(@"item at index %lu is %@", i, savedName);
+                //NSLog(@"item at index %lu is %@", i, savedName);
             }
             
             [inputField setStringValue:savedName];
@@ -68,7 +55,15 @@ MailEngine *myEngine;
         NSString *content = @"";
         NSData *fileContents = [content dataUsingEncoding:NSUTF8StringEncoding];
         [[NSFileManager defaultManager] createFileAtPath:path contents:fileContents attributes:nil];
+        
+        //        window.window
     }
+
+}
+
+- (void)applicationWillTerminate:(NSNotification *)aNotification {
+    // Insert code here to tear down your application
+    NSLog(@"app terminating");
 }
 
 @end

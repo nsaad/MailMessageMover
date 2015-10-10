@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "TextFieldDelegate.h"
 #import "MailSubjectLabelDelegate.h"
+@class WindowController;
 
-@interface MailMessageMoverAppDelegate : NSObject
+@interface MailMessageMoverAppDelegate : NSObject<NSApplicationDelegate>
 
-@property (nonatomic, strong) IBOutlet NSWindow * window;
 @property (nonatomic, strong) IBOutlet NSTextField * inputField;
 @property (retain) IBOutlet TextFieldDelegate * tfDelegate;
-@property (retain) IBOutlet MailSubjectLabelDelegate * mslDelegate;
+@property (retain) IBOutlet NSWindow *window;
 
 - (IBAction) quitApplication:(id)sender;
 
