@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>MailMessageMover</string>
 	<key>CFBundleIconFile</key>
-	<string>msgfiler</string>
+	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>Nabs-Inc.MailMessageMover</string>
 	<key>CFBundleInfoDictionaryVersion</key>
