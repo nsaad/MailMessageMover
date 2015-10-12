@@ -14,7 +14,6 @@
 @interface MailMessageMoverAppDelegate : NSObject<NSApplicationDelegate>
 
 @property (nonatomic, strong) IBOutlet NSTextField * inputField;
-@property (retain) IBOutlet TextFieldDelegate * tfDelegate;
 @property (retain) IBOutlet NSWindow *window;
 
 - (IBAction) quitApplication:(id)sender;

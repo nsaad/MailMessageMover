@@ -52,6 +52,7 @@ BOOL isMoveButtonClicked;
 - (void) moveTheMessage : (Mailbox *) selectedItem {
     
     //Check where the first / is in the full path and select the path component without the account name
+    //NSLog(@"in MoveTheMessage method");
     NSRange match = [selectedItem.fullPath rangeOfString: @"/"];
     NSString* pathWithoutAccount = [selectedItem.fullPath substringFromIndex:match.location + 1];
 

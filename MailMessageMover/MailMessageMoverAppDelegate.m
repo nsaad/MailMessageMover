@@ -11,7 +11,7 @@
 
 @implementation MailMessageMoverAppDelegate
 
-@synthesize window, inputField, tfDelegate;
+@synthesize window, inputField;
 
 MailEngine *myEngine;
 
@@ -63,6 +63,11 @@ MailEngine *myEngine;
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
     //NSLog(@"app terminating");
+}
+
+- (BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)application
+{
+    return YES;
 }
 
 @end

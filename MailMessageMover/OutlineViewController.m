@@ -12,7 +12,7 @@
 @implementation OutlineViewController
 
 MailEngine *myEngine;
-@synthesize myMailboxes;
+@synthesize myMailboxes, moveDelegate;
 
 - (id) init {
     
@@ -151,14 +151,14 @@ MailEngine *myEngine;
     //NSLog(@"OutlineViewController awakeFromNib");
 }
 
-/*
+
 - (IBAction) onDoubleClick : (id) sender {
-    NSLog(@"in double click");
+    //NSLog(@"in double click");
     Mailbox *selectedItem = [_outlineViewLocal itemAtRow:[_outlineViewLocal selectedRow]];
     NSLog(@"selected item is: %@", [selectedItem name]);
-    [tbDelegate moveTheMessage : selectedItem];
+    [moveDelegate moveTheMessage : selectedItem];
     
-}*/
+}
 
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item {
@@ -192,7 +192,7 @@ MailEngine *myEngine;
     [self.outlineViewLocal reloadData];
     
     NSInteger exactMatch = 1;
-    NSLog(@"in refresh, countOfMatched: %lu", countOfMatched);
+    //NSLog(@"in refresh, countOfMatched: %lu", countOfMatched);
     if (countOfMatched == exactMatch) {
         NSInteger rowToSelect = [myEngine getCountOfVisible];
         //NSLog(@"Only one match - count of visible %lu", rowToSelect);
