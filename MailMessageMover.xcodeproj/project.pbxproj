@@ -14,9 +14,7 @@
 		9363DBCA17B1262C009BDBEE /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9363DBC817B1262C009BDBEE /* Credits.rtf */; };
 		9363DBCF17B1262C009BDBEE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9363DBCD17B1262C009BDBEE /* MainMenu.xib */; };
 		9363DBDA17B42103009BDBEE /* TextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9363DBD917B42103009BDBEE /* TextFieldDelegate.m */; };
-		938E998B17D4DED50003932F /* msgfiler.png in Resources */ = {isa = PBXBuildFile; fileRef = 938E998A17D4DED50003932F /* msgfiler.png */; };
 		938E998E17D4E17C0003932F /* MailMessageMoverAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E998D17D4E17C0003932F /* MailMessageMoverAppDelegate.m */; };
-		938E999217D628FC0003932F /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = 938E999117D628FC0003932F /* ToDo */; };
 		93A55B7017D0B1A700BEB733 /* getMailMessageInfo.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93A55B6F17D0B1A700BEB733 /* getMailMessageInfo.scpt */; };
 		93A55B7217D0D9FF00BEB733 /* getAllMailboxes.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93A55B7117D0D9FF00BEB733 /* getAllMailboxes.scpt */; };
 		93A55B7417D0DB1A00BEB733 /* getAllAccounts.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93A55B7317D0DB1A00BEB733 /* getAllAccounts.scpt */; };
@@ -30,6 +28,7 @@
 		B9B4FCC31BC6B146004E9DEF /* CancelButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC21BC6B146004E9DEF /* CancelButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B9B4FCC61BC6CB88004E9DEF /* GoToFolderButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC51BC6CB88004E9DEF /* GoToFolderButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B9B4FCCA1BC6D02D004E9DEF /* ButtonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC91BC6D02D004E9DEF /* ButtonUtil.m */; settings = {ASSET_TAGS = (); }; };
+		B9D26BB81BCBE03A00ADF1DF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D26BB71BCBE03A00ADF1DF /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,10 +46,8 @@
 		9363DBCE17B1262C009BDBEE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9363DBD817B42103009BDBEE /* TextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldDelegate.h; sourceTree = "<group>"; };
 		9363DBD917B42103009BDBEE /* TextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldDelegate.m; sourceTree = "<group>"; };
-		938E998A17D4DED50003932F /* msgfiler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgfiler.png; sourceTree = "<group>"; };
 		938E998C17D4E17C0003932F /* MailMessageMoverAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailMessageMoverAppDelegate.h; sourceTree = "<group>"; };
 		938E998D17D4E17C0003932F /* MailMessageMoverAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailMessageMoverAppDelegate.m; sourceTree = "<group>"; };
-		938E999117D628FC0003932F /* ToDo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
 		93A55B6F17D0B1A700BEB733 /* getMailMessageInfo.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getMailMessageInfo.scpt; sourceTree = "<group>"; };
 		93A55B7117D0D9FF00BEB733 /* getAllMailboxes.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getAllMailboxes.scpt; sourceTree = "<group>"; };
 		93A55B7317D0DB1A00BEB733 /* getAllAccounts.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getAllAccounts.scpt; sourceTree = "<group>"; };
@@ -73,6 +70,7 @@
 		B9B4FCC71BC6CB92004E9DEF /* GoToFolderButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoToFolderButtonDelegate.h; sourceTree = "<group>"; };
 		B9B4FCC81BC6D01C004E9DEF /* ButtonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonUtil.h; sourceTree = "<group>"; };
 		B9B4FCC91BC6D02D004E9DEF /* ButtonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonUtil.m; sourceTree = "<group>"; };
+		B9D26BB71BCBE03A00ADF1DF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +89,6 @@
 		9363DBAB17B1262C009BDBEE = {
 			isa = PBXGroup;
 			children = (
-				938E999117D628FC0003932F /* ToDo */,
-				938E998A17D4DED50003932F /* msgfiler.png */,
 				9363DBBF17B1262C009BDBEE /* MailMessageMover */,
 				9363DBB617B1262C009BDBEE /* Frameworks */,
 				9363DBB517B1262C009BDBEE /* Products */,
@@ -153,6 +149,7 @@
 				93E61D0717C4E28A00683689 /* OutlineViewController.m */,
 				93E61D0917C5008900683689 /* MailEngine.h */,
 				93E61D0A17C5008900683689 /* MailEngine.m */,
+				B9D26BB71BCBE03A00ADF1DF /* Images.xcassets */,
 				9363DBC017B1262C009BDBEE /* Supporting Files */,
 			);
 			path = MailMessageMover;
@@ -227,14 +224,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9363DBC417B1262C009BDBEE /* InfoPlist.strings in Resources */,
+				B9D26BB81BCBE03A00ADF1DF /* Images.xcassets in Resources */,
 				9363DBCA17B1262C009BDBEE /* Credits.rtf in Resources */,
 				9363DBCF17B1262C009BDBEE /* MainMenu.xib in Resources */,
 				93A55B7017D0B1A700BEB733 /* getMailMessageInfo.scpt in Resources */,
 				93A55B7217D0D9FF00BEB733 /* getAllMailboxes.scpt in Resources */,
 				93B10FE31961BA530013B7F4 /* countSelectedMessages.scpt in Resources */,
 				93A55B7417D0DB1A00BEB733 /* getAllAccounts.scpt in Resources */,
-				938E998B17D4DED50003932F /* msgfiler.png in Resources */,
-				938E999217D628FC0003932F /* ToDo in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +345,7 @@
 		9363DBD317B1262C009BDBEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MailMessageMover/MailMessageMover-Prefix.pch";
@@ -362,6 +359,7 @@
 		9363DBD417B1262C009BDBEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MailMessageMover/MailMessageMover-Prefix.pch";
