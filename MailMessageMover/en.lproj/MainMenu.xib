@@ -14,8 +14,8 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <menu title="AMainMenu" systemMenu="main" id="29" userLabel="MainMenu">
             <items>
-                <menuItem title="MailMessageMover" id="56">
-                    <menu key="submenu" title="MailMessageMover" systemMenu="apple" id="57">
+                <menuItem title="Mail Message Mover" id="56">
+                    <menu key="submenu" title="Mail Message Mover" systemMenu="apple" id="57">
                         <items>
                             <menuItem title="About MailMessageMover" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -683,7 +683,7 @@
                     <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1173">
                         <rect key="frame" x="15" y="51" width="82" height="32"/>
                         <animations/>
-                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1174">
+                        <buttonCell key="cell" type="push" title="Exit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1174">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
@@ -912,7 +912,7 @@ Nabeel Saad - saadnabs@hotmail.com</string>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" selectable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1506">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="407"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="435"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -922,11 +922,11 @@ Nabeel Saad - saadnabs@hotmail.com</string>
                                         <fragment>
                                             <mutableString key="content">Hi,
 
-Thanks for using MailMessageMover. This is a basic app written to allow you to file your messages in Mail (only tested against v6.5).
+Thanks for using MailMessageMover. This is a basic app written to allow you to file your messages in Mail (tested against v9.0 in El Capitan).
 
 You need to create a service that will launch the MailMessageMover application, and then set a keyboard shortcut for that service and associate it to Mail.
 
-When this app launches, it will get a list of your mail folders and display them.  You can start typing the name of the folder you want to move your message to.  As the matches decreases, you can hit enter to choose the exact one from the list.  If there is only one, it will be highlighted and you can hit enter twice to have it move the message. (The keyboard shortcut for this is ⏎)
+When this app launches, it will get a list of your mail folders and display them.  You can start typing the name of the folder you want to move your message to.  As the matches decreases, you can hit enter to choose the exact one from the list.  If there is only one, it will be highlighted and when you hit enter the message will be moved to the selected folder. (The keyboard shortcut for this is ⏎)
 
 Otherwise, you can choose the "Go to folder" to get Mail to focus onto that folder. (The keyboard shortcut for this is </mutableString>
                                             <attributes>
@@ -941,11 +941,11 @@ Otherwise, you can choose the "Go to folder" to get Mail to focus onto that fold
                                             </attributes>
                                         </fragment>
                                         <fragment>
-                                            <string key="content">+G)
+                                            <mutableString key="content">+G)
 
-Once you start using this app, it will remember your last search in an attempt to simplify things if you need to move another message to the same folder.
+Once you start using this app, it will remember your last search in an attempt to simplify things if you need to move another message to the same folder although you can also multi-select emails and move them all in one go to a folder.
 
-Clicking cancel will just exit from the application</string>
+Clicking Exit will just exit from the application</mutableString>
                                             <attributes>
                                                 <font key="NSFont" size="12" name="Helvetica"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -966,7 +966,7 @@ Clicking cancel will just exit from the application</string>
                             <autoresizingMask key="autoresizingMask"/>
                             <animations/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1508">
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="1508">
                             <rect key="frame" x="285" y="1" width="16" height="394"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <animations/>
@@ -1000,6 +1000,7 @@ Clicking cancel will just exit from the application</string>
         </customObject>
         <customObject id="1305" userLabel="OutlineViewController" customClass="OutlineViewController">
             <connections>
+                <outlet property="moveDelegate" destination="Ets-Oj-J7u" id="Lz7-lr-9px"/>
                 <outlet property="outlineViewLocal" destination="1255" id="1333"/>
             </connections>
         </customObject>
