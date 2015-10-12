@@ -62,9 +62,29 @@ static int TextFieldKVOContext = 0;
         if ([keyPath isEqualToString:@"stringValue"]) {
             //NSLog(@"i'm aware the string got set: %@", [userInput stringValue]);
             [outlineViewDelegate refreshTheData:[userInput stringValue]];
-            //[self changeFocusToView];
         }
     }
+}
+
+- (BOOL)control:(NSControl*)control textView:(NSTextView*)textView doCommandBySelector:(SEL)commandSelector
+{
+    BOOL result = NO;
+    
+    //When enter is pressed in the NSTextField
+    if (commandSelector == @selector(insertNewline:))
+    {
+        NSString *text = [[textView textStorage] string];
+        //NSLog(@"insert new line text: %@", text);
+        [outlineViewDelegate refreshTheData:text];
+        [textView insertTab:self];
+        
+    }
+    else if (commandSelector == @selector(insertTab:))
+    {
+        //NSLog(@"insert tab");
+    }
+    
+    return result;
 }
 
 - (BOOL) acceptsFirstResponder {

@@ -788,19 +788,6 @@ DQ
                             <animations/>
                         </tableHeaderView>
                     </scrollView>
-                    <button identifier="goToFolderButton" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1346">
-                        <rect key="frame" x="269" y="18" width="132" height="32"/>
-                        <animations/>
-                        <buttonCell key="cell" type="push" title="Go to Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1347">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent">g</string>
-                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="goToFolderButtonClicked:" target="jmb-D2-aFF" id="XBj-j2-RIe"/>
-                        </connections>
-                    </button>
                     <textField identifier="errorLabel" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1361">
                         <rect key="frame" x="18" y="443" width="309" height="17"/>
                         <constraints>
@@ -848,6 +835,19 @@ DQ
                             <outlet property="delegate" destination="1298" id="Mni-JP-a4a"/>
                         </connections>
                     </textField>
+                    <button identifier="goToFolderButton" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1346">
+                        <rect key="frame" x="269" y="18" width="132" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Go to Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1347">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent">g</string>
+                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="goToFolderButtonClicked:" target="jmb-D2-aFF" id="XBj-j2-RIe"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="1107" firstAttribute="top" secondItem="1117" secondAttribute="bottom" constant="8" symbolic="YES" id="1119"/>
