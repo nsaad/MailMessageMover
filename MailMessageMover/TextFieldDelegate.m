@@ -76,7 +76,12 @@ static int TextFieldKVOContext = 0;
         NSString *text = [[textView textStorage] string];
         //NSLog(@"insert new line text: %@", text);
         [outlineViewDelegate refreshTheData:text];
-        [textView insertTab:self];
+        
+        if ([myEngine countOfMatched] == 1) {
+            NSLog(@"found only 1 match on enter");
+        } else {
+            [textView insertTab:self];
+        }
         
     }
     else if (commandSelector == @selector(insertTab:))
