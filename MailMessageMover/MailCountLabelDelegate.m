@@ -55,8 +55,5 @@
         return @"N/A";
     }
 }
-- (void) controlTextDidChange :(NSNotification *) sender {}
-
-- (void) changeFocusToView {}
 
 @end
