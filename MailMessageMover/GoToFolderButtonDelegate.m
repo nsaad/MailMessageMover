@@ -29,7 +29,7 @@
     Mailbox *selectedItem = [outlineView itemAtRow:[outlineView selectedRow]];
     //NSLog(@"Selected item in outline view is: %@", selectedItem.name);
     
-    BOOL *selected = [ButtonUtil checkIfItemSelected:selectedItem];
+    BOOL selected = [ButtonUtil checkIfItemSelected:selectedItem];
     
     if (selected) {
         
@@ -49,7 +49,7 @@
         NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
     
         if (script != nil) {
-            NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
+            [script executeAndReturnError:nil];
             //NSLog(@"result = %@", result.stringValue);
         }
         

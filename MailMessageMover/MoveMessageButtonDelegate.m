@@ -25,7 +25,7 @@ BOOL isMoveButtonClicked;
     Mailbox *selectedItem = [outlineView itemAtRow:[outlineView selectedRow]];
     //NSLog(@"Selected item in outline view is: %@", selectedItem.name);
     
-    BOOL *selected = [ButtonUtil checkIfItemSelected:selectedItem];
+    BOOL selected = [ButtonUtil checkIfItemSelected:selectedItem];
     
     if (selected) {
         [errorLabel setStringValue:@""];
@@ -67,8 +67,7 @@ BOOL isMoveButtonClicked;
     NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
     
     if (script != nil) {
-        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-        //NSLog(@"result = %@", result);
+        [script executeAndReturnError:nil];
     }
     
     [ButtonUtil writeArray:selectedItem];

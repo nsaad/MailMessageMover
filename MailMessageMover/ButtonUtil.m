@@ -24,7 +24,7 @@ MailEngine *myEngine;
     NSString *path = [myEngine saveFilePath];
     
     //NSLog(@"Path is %@", path);
-    [data writeToFile:path atomically:YES error:nil];
+    [data writeToFile:path atomically:YES];
     
     [myArray release];
 }
@@ -32,9 +32,9 @@ MailEngine *myEngine;
 + (BOOL) checkIfItemSelected : (Mailbox*) item {
     //NSLog(@"in check if item selected");
     if (item == NULL) {
-        return false;
+        return NO;
     } else {
-        return true;
+        return YES;
     }
 }
 
@@ -47,8 +47,7 @@ MailEngine *myEngine;
     NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptTemplate];
     
     if (script != nil) {
-        NSAppleEventDescriptor *result = [script executeAndReturnError:nil];
-        //NSLog(@"result = %@", result);
+        [script executeAndReturnError:nil];
     }
     
     [[NSApplication sharedApplication] terminate:nil];

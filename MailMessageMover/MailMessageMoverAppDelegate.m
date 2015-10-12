@@ -44,7 +44,6 @@ MailEngine *myEngine;
             }
             
             [inputField setStringValue:savedName];
-            [tfDelegate changeFocusToView];
             
         } else {
             //NSLog(@"File exists at %@, but it's empty", path);
