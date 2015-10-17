@@ -22,6 +22,7 @@
 		93E61D0517C4E0DF00683689 /* Mailbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0417C4E0DF00683689 /* Mailbox.m */; };
 		93E61D0817C4E28A00683689 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0717C4E28A00683689 /* OutlineViewController.m */; };
 		93E61D0B17C5008900683689 /* MailEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E61D0A17C5008900683689 /* MailEngine.m */; };
+		B901810C1BD3017A00C80DEA /* moveMessageAndSelectNext.scpt in Resources */ = {isa = PBXBuildFile; fileRef = B901810B1BD3017A00C80DEA /* moveMessageAndSelectNext.scpt */; settings = {ASSET_TAGS = (); }; };
 		B903B0351BC699AE00EA5404 /* MailCountLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B903B0341BC699AE00EA5404 /* MailCountLabelDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B98BA7011BC6858C00B009E6 /* MailSubjectLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B98BA7001BC6858C00B009E6 /* MailSubjectLabelDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		B9B4FCC11BC6AFCD004E9DEF /* MoveMessageButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B4FCC01BC6AFCD004E9DEF /* MoveMessageButtonDelegate.m */; settings = {ASSET_TAGS = (); }; };
@@ -58,6 +59,7 @@
 		93E61D0717C4E28A00683689 /* OutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewController.m; sourceTree = "<group>"; };
 		93E61D0917C5008900683689 /* MailEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailEngine.h; sourceTree = "<group>"; };
 		93E61D0A17C5008900683689 /* MailEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailEngine.m; sourceTree = "<group>"; };
+		B901810B1BD3017A00C80DEA /* moveMessageAndSelectNext.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = moveMessageAndSelectNext.scpt; sourceTree = "<group>"; };
 		B903B0331BC699AE00EA5404 /* MailCountLabelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailCountLabelDelegate.h; sourceTree = "<group>"; };
 		B903B0341BC699AE00EA5404 /* MailCountLabelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailCountLabelDelegate.m; sourceTree = "<group>"; };
 		B98BA6FF1BC6858C00B009E6 /* MailSubjectLabelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailSubjectLabelDelegate.h; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		9363DBC017B1262C009BDBEE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B901810B1BD3017A00C80DEA /* moveMessageAndSelectNext.scpt */,
 				93B10FE21961BA530013B7F4 /* countSelectedMessages.scpt */,
 				9363DBC117B1262C009BDBEE /* MailMessageMover-Info.plist */,
 				9363DBC217B1262C009BDBEE /* InfoPlist.strings */,
@@ -227,6 +230,7 @@
 				B9D26BB81BCBE03A00ADF1DF /* Images.xcassets in Resources */,
 				9363DBCA17B1262C009BDBEE /* Credits.rtf in Resources */,
 				9363DBCF17B1262C009BDBEE /* MainMenu.xib in Resources */,
+				B901810C1BD3017A00C80DEA /* moveMessageAndSelectNext.scpt in Resources */,
 				93A55B7017D0B1A700BEB733 /* getMailMessageInfo.scpt in Resources */,
 				93A55B7217D0D9FF00BEB733 /* getAllMailboxes.scpt in Resources */,
 				93B10FE31961BA530013B7F4 /* countSelectedMessages.scpt in Resources */,
